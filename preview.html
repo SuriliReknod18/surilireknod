@@ -1,0 +1,2739 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surili Govindsing Reknod | IT Student & Aspiring Software Engineer</title>
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
+  
+  <!-- Fonts: Space Grotesk, Manrope, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#050816',
+              900: '#0A0F2C',
+              850: '#0F163D',
+              800: '#172254',
+              700: '#233276',
+              600: '#32479E',
+            },
+            electric: {
+              violet: '#8B5CF6',
+              violetDark: '#6D28D9',
+              violetLight: '#C4B5FD',
+            },
+            neon: {
+              cyan: '#06B6D4',
+              cyanLight: '#22D3EE',
+              cyanBright: '#67E8F9',
+            },
+            soft: {
+              pink: '#EC4899',
+              pinkLight: '#F472B6',
+              pinkGlow: '#FBCFE8',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'Manrope', 'system-ui', 'sans-serif'],
+            heading: ['Space Grotesk', 'Manrope', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+          },
+          boxShadow: {
+            'glow-violet': '0 0 35px -5px rgba(139, 92, 246, 0.35)',
+            'glow-cyan': '0 0 35px -5px rgba(6, 182, 212, 0.35)',
+            'glow-pink': '0 0 35px -5px rgba(236, 72, 153, 0.3)',
+            'glow-multi': '0 0 45px -8px rgba(139, 92, 246, 0.25), 0 0 25px -4px rgba(6, 182, 212, 0.2)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #030614;
+      color: #f1f5f9;
+      font-family: 'Inter', 'Manrope', system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+    .bg-midnight-mesh {
+      background-color: transparent;
+    }
+    .glass-card {
+      background: rgba(11, 15, 42, 0.70);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card-hover:hover {
+      background: rgba(16, 22, 61, 0.88);
+      border-color: rgba(139, 92, 246, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.25), 0 0 25px -5px rgba(6, 182, 212, 0.2);
+    }
+    .text-gradient-main {
+      background: linear-gradient(135deg, #ffffff 10%, #c4b5fd 40%, #8b5cf6 70%, #22d3ee 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-gradient-cyan {
+      background: linear-gradient(135deg, #ffffff 10%, #67e8f9 50%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-gradient-violet {
+      background: linear-gradient(135deg, #ffffff 10%, #d8b4fe 40%, #a855f7 70%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-gradient-pink {
+      background: linear-gradient(135deg, #ffffff 15%, #f472b6 60%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Aurora Flow Animations */
+    @keyframes aurora-wave-1 {
+      0%, 100% { transform: translate(0%, 0%) scale(1) rotate(0deg); }
+      50% { transform: translate(8%, 10%) scale(1.15) rotate(15deg); }
+    }
+    @keyframes aurora-wave-2 {
+      0%, 100% { transform: translate(0%, 0%) scale(1) rotate(0deg); }
+      50% { transform: translate(-10%, -8%) scale(1.18) rotate(-18deg); }
+    }
+    @keyframes aurora-wave-3 {
+      0%, 100% { transform: translate(0%, 0%) scale(1); opacity: 0.18; }
+      50% { transform: translate(6%, -12%) scale(1.12); opacity: 0.28; }
+    }
+    .aurora-1 { animation: aurora-wave-1 22s ease-in-out infinite; will-change: transform; }
+    .aurora-2 { animation: aurora-wave-2 26s ease-in-out infinite; will-change: transform; animation-delay: 3s; }
+    .aurora-3 { animation: aurora-wave-3 20s ease-in-out infinite; will-change: transform; animation-delay: 6s; }
+    .aurora-4 { animation: aurora-wave-1 28s ease-in-out infinite reverse; will-change: transform; animation-delay: 2s; }
+
+    /* Floating Holographic Glyphs */
+    @keyframes float-glyph {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-16px) rotate(6deg); }
+    }
+    .float-glyph-1 { animation: float-glyph 8s ease-in-out infinite; will-change: transform; }
+    .float-glyph-2 { animation: float-glyph 10s ease-in-out infinite 2s; will-change: transform; }
+    .float-glyph-3 { animation: float-glyph 9s ease-in-out infinite 4s; will-change: transform; }
+
+    /* 3D Cyber Perspective Grid */
+    .cyber-grid-container {
+      perspective: 600px;
+      perspective-origin: 50% 100%;
+      mask-image: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+    }
+    .cyber-grid-plane {
+      transform: rotateX(72deg);
+      background-image: 
+        linear-gradient(to right, rgba(6, 182, 212, 0.12) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(139, 92, 246, 0.10) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #030614; }
+    ::-webkit-scrollbar-thumb { background: #172254; border-radius: 4px; border: 1px solid rgba(139, 92, 246, 0.2); }
+    ::-webkit-scrollbar-thumb:hover { background: #233276; border-color: rgba(6, 182, 212, 0.4); }
+
+    /* Accessibility: Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      .aurora-1, .aurora-2, .aurora-3, .aurora-4,
+      .float-glyph-1, .float-glyph-2, .float-glyph-3 {
+        animation: none !important;
+      }
+      .cyber-grid-plane {
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#030614] text-slate-100 min-h-screen selection:bg-electric-violet/40 selection:text-white relative">
+
+  <!-- ==================== UNIFIED FUTURISTIC AURORA GALAXY BACKGROUND ==================== -->
+  <div id="futuristic-background" class="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none" aria-hidden="true">
+    <!-- 1. Deep Midnight Base -->
+    <div class="absolute inset-0 bg-[#030614]"></div>
+
+    <!-- 2. Animated Flowing Aurora Gradient Waves -->
+    <div class="aurora-blob aurora-1 absolute -top-[20%] -left-[10%] w-[65vw] h-[65vw] max-w-[850px] max-h-[850px] rounded-full bg-electric-violet/25 blur-[120px]"></div>
+    <div class="aurora-blob aurora-2 absolute top-[25%] -right-[15%] w-[60vw] h-[60vw] max-w-[750px] max-h-[750px] rounded-full bg-neon-cyan/20 blur-[130px]"></div>
+    <div class="aurora-blob aurora-3 absolute bottom-[10%] left-[20%] w-[55vw] h-[55vw] max-w-[700px] max-h-[700px] rounded-full bg-soft-pink/18 blur-[140px]"></div>
+    <div class="aurora-blob aurora-4 absolute top-[60%] -left-[10%] w-[45vw] h-[45vw] max-w-[600px] max-h-[600px] rounded-full bg-electric-violet/15 blur-[110px]"></div>
+
+    <!-- 3. Subtle Cyber Perspective 3D Grid Floor at Horizon -->
+    <div class="cyber-grid-container absolute bottom-0 left-0 right-0 h-[38vh] opacity-35">
+      <div class="cyber-grid-plane w-[200%] -ml-[50%] h-full"></div>
+    </div>
+
+    <!-- 4. Floating Holographic Wireframe Geometric Glyphs -->
+    <div class="hidden lg:block absolute top-[18%] right-[8%] w-24 h-24 opacity-30 float-glyph-1">
+      <svg viewBox="0 0 100 100" fill="none" class="w-full h-full stroke-neon-cyanLight stroke-[1.2] drop-shadow-[0_0_8px_rgba(6,182,212,0.4)]">
+        <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" />
+        <line x1="50" y1="5" x2="50" y2="95" />
+        <line x1="10" y1="25" x2="90" y2="75" />
+        <line x1="10" y1="75" x2="90" y2="25" />
+        <circle cx="50" cy="50" r="14" class="stroke-soft-pinkLight stroke-1" />
+      </svg>
+    </div>
+
+    <div class="hidden lg:block absolute top-[52%] left-[4%] w-20 h-20 opacity-25 float-glyph-2">
+      <svg viewBox="0 0 100 100" fill="none" class="w-full h-full stroke-electric-violetLight stroke-[1.2] drop-shadow-[0_0_8px_rgba(139,92,246,0.4)]">
+        <polygon points="50,8 92,50 50,92 8,50" />
+        <circle cx="50" cy="50" r="24" class="stroke-neon-cyanBright stroke-1" stroke-dasharray="3 3" />
+        <line x1="50" y1="8" x2="50" y2="92" />
+        <line x1="8" y1="50" x2="92" y2="50" />
+      </svg>
+    </div>
+
+    <div class="hidden lg:block absolute bottom-[22%] right-[5%] w-20 h-20 opacity-25 float-glyph-3">
+      <svg viewBox="0 0 100 100" fill="none" class="w-full h-full stroke-soft-pinkLight stroke-[1.2] drop-shadow-[0_0_8px_rgba(236,72,153,0.4)]">
+        <circle cx="50" cy="50" r="36" stroke-dasharray="6 4" />
+        <polygon points="50,18 78,68 22,68" />
+        <circle cx="50" cy="50" r="8" class="fill-neon-cyanLight/20" />
+      </svg>
+    </div>
+
+    <!-- 5. Full-Viewport Starfield & Interactive Constellation Canvas -->
+    <canvas id="bg-galaxy-canvas" class="absolute inset-0 w-full h-full"></canvas>
+  </div>
+
+  <!-- ==================== A. STICKY NAVBAR ==================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3.5 bg-navy-950/90 backdrop-blur-xl border-b border-navy-800/80 shadow-2xl shadow-navy-950/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        
+        <!-- Brand Monogram & Name -->
+        <a href="#home" class="group flex items-center gap-3">
+          <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-electric-violet via-neon-cyan to-soft-pink p-[1.5px] shadow-lg shadow-electric-violet/20 group-hover:shadow-glow-multi transition-all duration-300">
+            <div class="w-full h-full bg-navy-950 rounded-[10px] flex items-center justify-center font-bold text-sm tracking-wider text-white group-hover:text-neon-cyanLight transition-colors">
+              SR
+            </div>
+            <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-navy-950 animate-pulse"></span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-sm sm:text-base tracking-tight text-white group-hover:text-neon-cyanLight transition-colors">
+              Surili Reknod
+            </span>
+            <span class="text-[11px] text-electric-violetLight font-mono tracking-wider">
+              IT Student • RCPIT
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-1 bg-navy-900/80 border border-navy-800/80 px-4 py-1.5 rounded-full backdrop-blur-md shadow-inner shadow-black/40">
+          <a href="#home" class="nav-item px-3.5 py-1.5 text-xs font-medium rounded-full text-slate-300 hover:text-white hover:bg-navy-800/60 transition-all">Home</a>
+          <a href="#about" class="nav-item px-3.5 py-1.5 text-xs font-medium rounded-full text-slate-300 hover:text-white hover:bg-navy-800/60 transition-all">About &amp; Education</a>
+          <a href="#skills" class="nav-item px-3.5 py-1.5 text-xs font-medium rounded-full text-slate-300 hover:text-white hover:bg-navy-800/60 transition-all">Skills</a>
+          <a href="#projects" class="nav-item px-3.5 py-1.5 text-xs font-medium rounded-full text-slate-300 hover:text-white hover:bg-navy-800/60 transition-all">Projects</a>
+          <a href="#certifications" class="nav-item px-3.5 py-1.5 text-xs font-medium rounded-full text-slate-300 hover:text-white hover:bg-navy-800/60 transition-all">Certifications</a>
+          <a href="#career-goals" class="nav-item px-3.5 py-1.5 text-xs font-medium rounded-full text-slate-300 hover:text-white hover:bg-navy-800/60 transition-all">Career Goals</a>
+          <a href="#contact" class="nav-item px-3.5 py-1.5 text-xs font-medium rounded-full text-slate-300 hover:text-white hover:bg-navy-800/60 transition-all">Contact</a>
+        </nav>
+
+        <!-- Right Action Buttons -->
+        <div class="hidden sm:flex items-center gap-3">
+          <button onclick="openResumeModal()" class="px-3.5 py-2 rounded-full text-xs font-semibold text-slate-200 hover:text-white bg-navy-900/80 hover:bg-navy-800 border border-navy-700/80 transition-all hover:border-electric-violet/50">
+            Resume
+          </button>
+          <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-electric-violet via-purple-600 to-neon-cyan hover:opacity-95 shadow-lg shadow-electric-violet/25 hover:shadow-glow-multi transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+            <span>Let's Talk</span>
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-cyan-200"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="menu-toggle" class="lg:hidden p-2.5 rounded-xl text-slate-300 hover:text-white bg-navy-900/90 border border-navy-800" aria-label="Toggle Menu">
+          <i data-lucide="menu" class="w-5 h-5 text-neon-cyanLight"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-navy-950/95 border-b border-navy-800 backdrop-blur-2xl px-5 pt-4 pb-7 space-y-2 mt-2 shadow-2xl">
+      <a href="#home" class="mobile-nav block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-navy-900">Home</a>
+      <a href="#about" class="mobile-nav block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-navy-900">About &amp; Education</a>
+      <a href="#skills" class="mobile-nav block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-navy-900">Technical Skills</a>
+      <a href="#projects" class="mobile-nav block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-navy-900">Projects</a>
+      <a href="#certifications" class="mobile-nav block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-navy-900">Certifications &amp; CodeChef</a>
+      <a href="#career-goals" class="mobile-nav block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-navy-900">Career Goals</a>
+      <a href="#contact" class="mobile-nav block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-navy-900">Contact</a>
+      <div class="pt-4 border-t border-navy-800/80 flex items-center gap-3">
+        <button onclick="openResumeModal()" class="flex-1 py-2.5 text-center rounded-xl text-xs font-semibold text-white bg-navy-900 border border-navy-700">
+          View Resume
+        </button>
+        <a href="#contact" class="mobile-nav flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-electric-violet to-neon-cyan">
+          <span>Let's Talk</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== B. HERO SECTION ==================== -->
+  <section id="home" class="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Headline, Bio & CTAs -->
+        <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
+          
+          <!-- Availability & Location Badges -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-900/90 border border-electric-violet/40 text-electric-violetLight text-xs font-mono backdrop-blur-md shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Open to SDE Internships &amp; Opportunities</span>
+            </div>
+            <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-navy-900/80 border border-neon-cyan/30 text-neon-cyanBright text-xs font-mono">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+              <span>Chhatrapati Sambhajinagar, Maharashtra</span>
+            </div>
+          </div>
+
+          <!-- Main Headline -->
+          <div class="space-y-3">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+              Hi, I'm <br class="hidden sm:inline">
+              <span class="text-gradient-main">Surili Govindsing Reknod</span>
+            </h1>
+
+            <div class="text-lg sm:text-xl font-medium text-slate-200 flex items-center justify-center lg:justify-start gap-2">
+              <span class="text-neon-cyanBright font-semibold">Information Technology Student</span>
+              <span class="text-slate-500">•</span>
+              <span class="text-electric-violetLight">Aspiring Software Engineer</span>
+            </div>
+
+            <p class="text-xs sm:text-sm font-mono text-soft-pinkLight italic">
+              "Building digital experiences that make an impact."
+            </p>
+          </div>
+
+          <!-- Intro Paragraph -->
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Second-year IT student at <strong class="text-white font-semibold">R. C. Patel Institute of Technology, Shirpur</strong>. Passionate about mastering <span class="text-neon-cyanBright font-medium">Java</span>, <span className="text-electric-violetLight font-medium">C</span>, and <span class="text-white font-medium">Data Structures &amp; Algorithms (DSA)</span> to engineer impactful software. Driven to join elite engineering teams at <span class="text-soft-pinkLight font-medium">Microsoft, Google, Amazon, or Samsung</span>.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+            <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-electric-violet via-purple-600 to-neon-cyan hover:opacity-95 shadow-lg shadow-electric-violet/30 hover:shadow-glow-multi transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+              <span>Explore My Work</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-cyan-200"></i>
+            </a>
+
+            <button onclick="openResumeModal()" class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold text-slate-200 hover:text-white bg-navy-900/90 hover:bg-navy-850 border border-electric-violet/40 hover:border-electric-violet shadow-md transition-all transform hover:-translate-y-0.5">
+              <i data-lucide="eye" class="w-4 h-4 text-electric-violetLight"></i>
+              <span>View Resume</span>
+            </button>
+
+            <a href="public/resume.pdf" download="Surili_Govindsing_Reknod_Resume.pdf" class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold text-slate-200 hover:text-white bg-navy-900/90 hover:bg-navy-850 border border-neon-cyan/40 hover:border-neon-cyan shadow-md transition-all transform hover:-translate-y-0.5">
+              <i data-lucide="download" class="w-4 h-4 text-neon-cyanLight"></i>
+              <span>Download CV</span>
+            </a>
+          </div>
+
+          <!-- Social Direct Links -->
+          <div class="pt-3 border-t border-navy-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <span class="text-xs font-mono uppercase tracking-wider text-slate-400">
+              Connect:
+            </span>
+            <div class="flex items-center gap-2">
+              <a href="https://github.com/SuriliReknod18" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-navy-900/80 hover:bg-navy-800 border border-navy-800 hover:border-neon-cyan/50 text-slate-300 hover:text-white transition-all hover:scale-105" title="GitHub Profile">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/surili-reknod-5a689842a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-navy-900/80 hover:bg-navy-800 border border-navy-800 hover:border-electric-violet/50 text-slate-300 hover:text-white transition-all hover:scale-105" title="LinkedIn Profile">
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+              </a>
+              <a href="https://www.codechef.com/users/surilireknod" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded-xl bg-navy-900/80 hover:bg-navy-800 border border-navy-800 hover:border-soft-pink/50 text-slate-300 hover:text-white text-xs font-mono font-semibold transition-all hover:scale-105 flex items-center gap-1.5" title="CodeChef Profile">
+                <i data-lucide="award" class="w-4 h-4 text-amber-400"></i>
+                <span>CodeChef</span>
+              </a>
+              <a href="mailto:surelireknod@gmail.com" class="p-2.5 rounded-xl bg-navy-900/80 hover:bg-navy-800 border border-navy-800 hover:border-emerald-500/50 text-slate-300 hover:text-white transition-all hover:scale-105" title="Send Email">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </a>
+              <a href="tel:8262007814" class="p-2.5 rounded-xl bg-navy-900/80 hover:bg-navy-800 border border-navy-800 hover:border-cyan-500/50 text-slate-300 hover:text-white transition-all hover:scale-105" title="Call Phone">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Profile Holographic Card & Visual Highlights -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          <div class="absolute inset-0 bg-gradient-to-r from-electric-violet/20 via-neon-cyan/20 to-soft-pink/20 rounded-3xl blur-2xl -z-10"></div>
+
+          <div class="w-full max-w-md glass-card rounded-3xl p-6 sm:p-7 border-navy-800/80 relative space-y-6 shadow-2xl">
+            
+            <!-- Card Header -->
+            <div class="flex items-center justify-between pb-4 border-b border-navy-800/80">
+              <div class="flex items-center gap-3.5">
+                <div class="relative w-20 h-28 sm:w-24 sm:h-32 shrink-0 rounded-2xl bg-gradient-to-br from-electric-violet via-neon-cyan to-soft-pink p-[2px] shadow-xl shadow-electric-violet/30 group">
+                  <img src="profile.jpg" alt="Surili Govindsing Reknod" class="w-full h-full object-cover object-top rounded-[14px] transition-transform duration-500 group-hover:scale-105">
+                  <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-navy-950 animate-pulse shadow-sm" title="Active Student & Ready for Opportunities"></span>
+                </div>
+                <div>
+                  <h3 class="text-base sm:text-lg font-bold text-white">Surili Reknod</h3>
+                  <p class="text-xs text-electric-violetLight font-mono">B.Tech IT • 2nd Year Student</p>
+                  <p class="text-[11px] text-slate-400">R. C. Patel Institute of Tech, Shirpur</p>
+                  <div class="mt-1.5">
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-500/30 inline-block">
+                      Active Student
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Verified Metrics Grid -->
+            <div class="grid grid-cols-2 gap-3">
+              <div class="p-3.5 rounded-2xl bg-navy-900/80 border border-navy-800 space-y-1">
+                <span class="text-[10px] font-mono uppercase text-slate-400">First-Year CGPA</span>
+                <div class="text-xl font-extrabold text-neon-cyanBright">7.26 <span class="text-xs text-slate-400 font-normal">/ 10</span></div>
+                <span class="text-[10px] text-slate-400">RCPIT Shirpur</span>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-navy-900/80 border border-navy-800 space-y-1">
+                <span class="text-[10px] font-mono uppercase text-slate-400">10th Standard</span>
+                <div class="text-xl font-extrabold text-electric-violetLight">90.20%</div>
+                <span class="text-[10px] text-slate-400">SSC Distinction</span>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-navy-900/80 border border-navy-800 space-y-1">
+                <span class="text-[10px] font-mono uppercase text-slate-400">12th Standard</span>
+                <div class="text-xl font-extrabold text-soft-pinkLight">84.67%</div>
+                <span class="text-[10px] text-slate-400">HSC Distinction</span>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-navy-900/80 border border-navy-800 space-y-1">
+                <span class="text-[10px] font-mono uppercase text-slate-400">Certifications</span>
+                <div class="text-xl font-extrabold text-amber-300">2x Verified</div>
+                <span class="text-[10px] text-slate-400">CodeChef Java &amp; C</span>
+              </div>
+            </div>
+
+            <!-- Terminal Snippet -->
+            <div class="rounded-2xl bg-navy-950/90 border border-navy-800/80 p-3.5 font-mono text-xs space-y-1.5 shadow-inner">
+              <div class="flex items-center justify-between pb-1 border-b border-navy-800/60 text-[10px] text-slate-500">
+                <span>surili_engineer.java</span>
+                <span class="text-neon-cyanLight">Java 17 / DSA</span>
+              </div>
+              <p class="text-slate-400 text-[11px]"><span class="text-electric-violetLight">class</span> <span class="text-neon-cyanLight">Engineer</span> {</p>
+              <p class="text-slate-400 text-[11px] pl-3"><span class="text-soft-pinkLight">String</span> dream = <span class="text-emerald-400">"SDE @ Top Tech"</span>;</p>
+              <p class="text-slate-400 text-[11px] pl-3"><span class="text-soft-pinkLight">String[]</span> skills = {<span class="text-amber-300">"Java"</span>, <span class="text-amber-300">"C"</span>, <span class="text-amber-300">"DSA"</span>};</p>
+              <p class="text-slate-400 text-[11px]">}</p>
+            </div>
+
+            <!-- Featured Academic Project Snippet -->
+            <div class="p-3.5 rounded-2xl bg-gradient-to-r from-electric-violet/15 via-navy-900 to-neon-cyan/15 border border-electric-violet/30 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] font-mono uppercase tracking-wider text-neon-cyanBright">Academic Capstone</span>
+                <h4 class="text-xs font-bold text-white mt-0.5">Online Student Leave System</h4>
+              </div>
+              <a href="#projects" class="px-2.5 py-1 rounded-lg text-xs font-mono font-medium text-white bg-electric-violet/40 hover:bg-electric-violet/70 transition-colors">
+                Details →
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="mt-16 text-center flex flex-col items-center justify-center space-y-2">
+        <a href="#about" class="group inline-flex flex-col items-center text-xs font-mono text-slate-400 hover:text-white transition-colors">
+          <span>Scroll to Explore</span>
+          <i data-lucide="arrow-down" class="w-4 h-4 text-electric-violetLight mt-1 animate-bounce group-hover:text-neon-cyanLight transition-colors"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== C. ABOUT ME & EDUCATION ==================== -->
+  <section id="about" class="py-24 relative bg-navy-950/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-navy-900 border border-electric-violet/40 text-electric-violetLight text-xs font-mono">
+          <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+          <span>Academic Background &amp; Persona</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          About Me &amp; <span class="text-gradient-main">Education</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Second-year Information Technology undergraduate combining disciplined academic rigor with a hands-on builder mindset.
+        </p>
+      </div>
+
+      <!-- 4 Highlight Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16">
+        <div class="glass-card p-6 rounded-2xl border-navy-800/80 hover:border-neon-cyan/50 transition-all duration-300 transform hover:-translate-y-1">
+          <div class="flex items-center justify-between pb-3">
+            <span class="text-xs font-mono uppercase tracking-wider text-slate-400">Academic CGPA</span>
+            <div class="p-2 rounded-xl bg-navy-900 border border-navy-800 text-neon-cyanLight">
+              <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="text-2xl font-extrabold text-white tracking-tight">7.26 / 10</div>
+          <div class="text-xs text-slate-400 mt-1">First-Year B.Tech IT at RCPIT</div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border-navy-800/80 hover:border-electric-violet/50 transition-all duration-300 transform hover:-translate-y-1">
+          <div class="flex items-center justify-between pb-3">
+            <span class="text-xs font-mono uppercase tracking-wider text-slate-400">Secondary (10th)</span>
+            <div class="p-2 rounded-xl bg-navy-900 border border-navy-800 text-electric-violetLight">
+              <i data-lucide="award" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="text-2xl font-extrabold text-white tracking-tight">90.20%</div>
+          <div class="text-xs text-slate-400 mt-1">High Distinction Academic Record</div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border-navy-800/80 hover:border-soft-pink/50 transition-all duration-300 transform hover:-translate-y-1">
+          <div class="flex items-center justify-between pb-3">
+            <span class="text-xs font-mono uppercase tracking-wider text-slate-400">Higher Sec (12th)</span>
+            <div class="p-2 rounded-xl bg-navy-900 border border-navy-800 text-soft-pinkLight">
+              <i data-lucide="book-open" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="text-2xl font-extrabold text-white tracking-tight">84.67%</div>
+          <div class="text-xs text-slate-400 mt-1">First Class with Distinction</div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border-navy-800/80 hover:border-amber-400/50 transition-all duration-300 transform hover:-translate-y-1">
+          <div class="flex items-center justify-between pb-3">
+            <span class="text-xs font-mono uppercase tracking-wider text-slate-400">Verified Credentials</span>
+            <div class="p-2 rounded-xl bg-navy-900 border border-navy-800 text-amber-300">
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="text-2xl font-extrabold text-white tracking-tight">2x CodeChef</div>
+          <div class="text-xs text-slate-400 mt-1">Certified in Java &amp; C Programming</div>
+        </div>
+      </div>
+
+      <!-- Story & Education Two-Column Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- Left: Story & Hobbies -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="glass-card p-7 sm:p-8 rounded-3xl border-navy-800/80 space-y-6">
+            
+            <!-- Profile Portrait Showcase (Framed up to chest) -->
+            <div class="flex flex-col sm:flex-row items-center gap-5 pb-5 border-b border-navy-800/80">
+              <div class="relative w-28 h-36 sm:w-36 sm:h-48 shrink-0 rounded-2xl bg-gradient-to-br from-electric-violet via-neon-cyan to-soft-pink p-[2.5px] shadow-xl shadow-electric-violet/25 group">
+                <img src="profile.jpg" alt="Surili Govindsing Reknod" class="w-full h-full object-cover object-top rounded-[14px] transition-transform duration-500 group-hover:scale-105">
+                <span class="absolute -bottom-1.5 -right-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-navy-950 text-emerald-300 border border-emerald-500/40 shadow-md flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  RCPIT
+                </span>
+              </div>
+              <div class="space-y-1.5 text-center sm:text-left">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-electric-violet/15 border border-electric-violet/30 text-electric-violetLight text-[11px] font-mono">
+                  <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+                  <span>Who I Am</span>
+                </div>
+                <h3 class="text-xl font-bold text-white">Surili Govindsing Reknod</h3>
+                <p class="text-xs text-neon-cyanBright font-medium">B.Tech Information Technology • 2nd Year</p>
+                <p class="text-[11px] text-slate-400">R. C. Patel Institute of Technology, Shirpur</p>
+              </div>
+            </div>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              I am a second-year Information Technology undergraduate at R. C. Patel Institute of Technology, Shirpur, originally from Chhatrapati Sambhajinagar, Maharashtra. My journey in technology is driven by a deep curiosity for how computational systems solve human problems. With strong academic roots (90.20% in 10th, 84.67% in 12th, and a 7.26 first-year CGPA), I spend my days coding in Java and C, sharpening my intuition in Data Structures and Algorithms, and building digital applications like my Online Student Leave Application System.
+            </p>
+
+            <!-- Location & Campus Info -->
+            <div class="space-y-3 pt-2">
+              <div class="flex items-start gap-3 p-3.5 rounded-xl bg-navy-900/80 border border-navy-800 text-xs">
+                <i data-lucide="map-pin" class="w-4 h-4 text-neon-cyanLight shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="font-semibold text-white">Hometown: </span>
+                  <span class="text-slate-300">Chhatrapati Sambhajinagar, Maharashtra</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-3.5 rounded-xl bg-navy-900/80 border border-navy-800 text-xs">
+                <i data-lucide="graduation-cap" class="w-4 h-4 text-electric-violetLight shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="font-semibold text-white">College: </span>
+                  <span class="text-slate-300">R. C. Patel Institute of Technology, Shirpur, Maharashtra</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Passions: Coding & Cooking -->
+            <div class="pt-4 border-t border-navy-800/80 space-y-3">
+              <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-400">
+                <i data-lucide="heart" class="w-3.5 h-3.5 text-soft-pinkLight"></i>
+                <span>Hobbies &amp; Creative Outlets</span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2.5">
+                <div class="p-3 rounded-xl bg-navy-900/90 border border-navy-800 flex items-center gap-2.5">
+                  <div class="p-1.5 rounded-lg bg-electric-violet/20 text-electric-violetLight">
+                    <i data-lucide="code-2" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-white">Coding</h4>
+                    <p class="text-[10px] text-slate-400">DSA &amp; Development</p>
+                  </div>
+                </div>
+
+                <div class="p-3 rounded-xl bg-navy-900/90 border border-navy-800 flex items-center gap-2.5">
+                  <div class="p-1.5 rounded-lg bg-soft-pink/20 text-soft-pinkLight">
+                    <i data-lucide="utensils" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-white">Cooking</h4>
+                    <p class="text-[10px] text-slate-400">Recipes &amp; Precision</p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-[12px] text-slate-400 italic leading-relaxed pt-1">
+                "Just like code demands logical structure and syntax perfection, cooking requires balanced ingredients, precise timing, and continuous refinement."
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Education Timeline -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2.5">
+              <i data-lucide="book-marked" class="w-5 h-5 text-neon-cyanLight"></i>
+              <span>Academic Record &amp; Timeline</span>
+            </h3>
+            <span class="text-xs font-mono text-slate-400">All Credentials Verified</span>
+          </div>
+
+          <div class="space-y-5">
+            
+            <!-- B.Tech Card -->
+            <div class="glass-card p-6 sm:p-7 rounded-2xl border-navy-800/80 space-y-4 group hover:border-electric-violet/40 transition-all">
+              <div class="flex flex-wrap items-start justify-between gap-2 pb-3 border-b border-navy-800/80">
+                <div>
+                  <span class="text-xs font-mono font-semibold text-neon-cyanBright bg-navy-900 px-3 py-1 rounded-md border border-neon-cyan/30">
+                    Currently Pursuing (Second Year)
+                  </span>
+                  <h4 class="text-base sm:text-lg font-bold text-white mt-2 group-hover:text-neon-cyanLight transition-colors">
+                    Bachelor of Technology (B.Tech) in Information Technology
+                  </h4>
+                  <p class="text-xs sm:text-sm font-medium text-slate-300 mt-0.5">
+                    R. C. Patel Institute of Technology, Shirpur, Maharashtra
+                  </p>
+                </div>
+
+                <div class="text-left sm:text-right mt-1 sm:mt-0">
+                  <div class="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5 text-electric-violetLight"></i>
+                    <span>2023 — 2027 (Expected)</span>
+                  </div>
+                  <div class="mt-1">
+                    <span class="text-xs text-slate-400 font-mono block">First-Year CGPA:</span>
+                    <span class="text-base font-extrabold text-white text-gradient-main">
+                      7.26 / 10
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">
+                  Core Subjects &amp; Focus:
+                </span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Object-Oriented Programming (Java)</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Data Structures &amp; Algorithms (DSA)</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">C Programming Fundamentals</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Database Management Systems (DBMS)</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Computer Organization &amp; Architecture</span>
+                </div>
+              </div>
+
+              <div class="space-y-1.5 pt-2 border-t border-navy-800/60 text-xs text-slate-300">
+                <div class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                  <span>Developing institutional full-stack project: Online Student Leave Application System.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                  <span>Active participant in departmental programming laboratories and competitive challenges.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- HSC 12th Card -->
+            <div class="glass-card p-6 sm:p-7 rounded-2xl border-navy-800/80 space-y-4 group hover:border-soft-pink/40 transition-all">
+              <div class="flex flex-wrap items-start justify-between gap-2 pb-3 border-b border-navy-800/80">
+                <div>
+                  <span class="text-xs font-mono font-semibold text-soft-pinkLight bg-navy-900 px-3 py-1 rounded-md border border-soft-pink/30">
+                    First Class with Distinction
+                  </span>
+                  <h4 class="text-base sm:text-lg font-bold text-white mt-2 group-hover:text-soft-pinkLight transition-colors">
+                    Higher Secondary Certificate (HSC — 12th Standard)
+                  </h4>
+                  <p class="text-xs sm:text-sm font-medium text-slate-300 mt-0.5">
+                    Maharashtra State Board • Science Stream
+                  </p>
+                </div>
+
+                <div class="text-left sm:text-right mt-1 sm:mt-0">
+                  <div class="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5 text-soft-pinkLight"></i>
+                    <span>Completed 2023</span>
+                  </div>
+                  <div class="mt-1">
+                    <span class="text-xs text-slate-400 font-mono block">Final Percentage:</span>
+                    <span class="text-base font-extrabold text-white text-gradient-pink">
+                      84.67%
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">
+                  Coursework:
+                </span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Physics</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Chemistry</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Mathematics</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Information Technology</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SSC 10th Card -->
+            <div class="glass-card p-6 sm:p-7 rounded-2xl border-navy-800/80 space-y-4 group hover:border-amber-400/40 transition-all">
+              <div class="flex flex-wrap items-start justify-between gap-2 pb-3 border-b border-navy-800/80">
+                <div>
+                  <span class="text-xs font-mono font-semibold text-amber-300 bg-navy-900 px-3 py-1 rounded-md border border-amber-400/30">
+                    Top 10% Distinction
+                  </span>
+                  <h4 class="text-base sm:text-lg font-bold text-white mt-2 group-hover:text-amber-300 transition-colors">
+                    Secondary School Certificate (SSC — 10th Standard)
+                  </h4>
+                  <p class="text-xs sm:text-sm font-medium text-slate-300 mt-0.5">
+                    Maharashtra State Board of Secondary Education
+                  </p>
+                </div>
+
+                <div class="text-left sm:text-right mt-1 sm:mt-0">
+                  <div class="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5 text-amber-300"></i>
+                    <span>Completed 2021</span>
+                  </div>
+                  <div class="mt-1">
+                    <span class="text-xs text-slate-400 font-mono block">Final Percentage:</span>
+                    <span class="text-base font-extrabold text-amber-300 font-mono">
+                      90.20%
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">
+                  Core Subjects:
+                </span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Mathematics</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Science &amp; Technology</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Social Sciences</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== D. TECHNICAL SKILLS ==================== -->
+  <section id="skills" class="py-24 relative bg-midnight-mesh">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-navy-900 border border-neon-cyan/40 text-neon-cyanBright text-xs font-mono">
+          <i data-lucide="code-2" class="w-3.5 h-3.5"></i>
+          <span>Technical Capabilities</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Technical <span class="text-gradient-cyan">Skills</span> &amp; Focus
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Curated overview of core programming languages, algorithmic problem solving, software design principles, and engineering tooling.
+        </p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <button onclick="filterSkills('all')" class="skill-filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all bg-gradient-to-r from-electric-violet to-neon-cyan text-white shadow-lg border border-neon-cyan/40" data-filter="all">
+          All Competencies
+        </button>
+        <button onclick="filterSkills('languages')" class="skill-filter-btn px-4 py-2 rounded-full text-xs font-medium transition-all bg-navy-900/90 text-slate-300 hover:text-white border border-navy-800 hover:border-navy-700" data-filter="languages">
+          Programming Languages
+        </button>
+        <button onclick="filterSkills('fundamentals')" class="skill-filter-btn px-4 py-2 rounded-full text-xs font-medium transition-all bg-navy-900/90 text-slate-300 hover:text-white border border-navy-800 hover:border-navy-700" data-filter="fundamentals">
+          CS Fundamentals &amp; DSA
+        </button>
+        <button onclick="filterSkills('tools')" class="skill-filter-btn px-4 py-2 rounded-full text-xs font-medium transition-all bg-navy-900/90 text-slate-300 hover:text-white border border-navy-800 hover:border-navy-700" data-filter="tools">
+          Tools &amp; Environment
+        </button>
+        <button onclick="filterSkills('interests')" class="skill-filter-btn px-4 py-2 rounded-full text-xs font-medium transition-all bg-navy-900/90 text-slate-300 hover:text-white border border-navy-800 hover:border-navy-700" data-filter="interests">
+          Special Interests
+        </button>
+        <button onclick="filterSkills('strengths')" class="skill-filter-btn px-4 py-2 rounded-full text-xs font-medium transition-all bg-navy-900/90 text-slate-300 hover:text-white border border-navy-800 hover:border-navy-700" data-filter="strengths">
+          Strengths &amp; Passions
+        </button>
+      </div>
+
+      <!-- Skills Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Card 1: Languages -->
+        <div class="skill-category-card glass-card p-6 sm:p-7 rounded-2xl border-navy-800/80 flex flex-col justify-between group hover:border-neon-cyan/40 transition-all duration-300 transform hover:-translate-y-1 shadow-xl" data-category="languages">
+          <div>
+            <div class="flex items-center gap-3 pb-4 border-b border-navy-800/80">
+              <div class="p-3 rounded-xl bg-navy-900 border border-navy-800 text-neon-cyanLight">
+                <i data-lucide="code-2" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white group-hover:text-neon-cyanLight transition-colors">Programming Languages</h3>
+                <p class="text-xs text-slate-400 mt-0.5">Core languages for software &amp; problem solving</p>
+              </div>
+            </div>
+
+            <div class="mt-5 space-y-3">
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800/70 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">Java</div>
+                  <div class="text-xs text-slate-400 font-mono">Primary Language / OOP Architecture</div>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-medium bg-navy-950 text-neon-cyanBright border border-neon-cyan/25 shrink-0">
+                  CodeChef Certified
+                </span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800/70 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">C Language</div>
+                  <div class="text-xs text-slate-400 font-mono">Core Systems &amp; Low-Level Foundations</div>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-medium bg-navy-950 text-neon-cyanBright border border-neon-cyan/25 shrink-0">
+                  CodeChef Certified
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-3 border-t border-navy-800/60 flex items-center justify-between text-xs text-slate-400 font-mono">
+            <span>2 Core Languages</span>
+            <span class="text-emerald-400 flex items-center gap-1">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Verified Active
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 2: CS Fundamentals & DSA -->
+        <div class="skill-category-card glass-card p-6 sm:p-7 rounded-2xl border-navy-800/80 flex flex-col justify-between group hover:border-electric-violet/40 transition-all duration-300 transform hover:-translate-y-1 shadow-xl" data-category="fundamentals">
+          <div>
+            <div class="flex items-center gap-3 pb-4 border-b border-navy-800/80">
+              <div class="p-3 rounded-xl bg-navy-900 border border-navy-800 text-electric-violetLight">
+                <i data-lucide="cpu" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white group-hover:text-electric-violetLight transition-colors">CS Fundamentals &amp; DSA</h3>
+                <p class="text-xs text-slate-400 mt-0.5">Core computer science principles &amp; algorithmic logic</p>
+              </div>
+            </div>
+
+            <div class="mt-5 space-y-3">
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800/70 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">Data Structures (DSA)</div>
+                  <div class="text-xs text-slate-400 font-mono">Arrays, Linked Lists, Stacks, Queues, Trees</div>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-medium bg-navy-950 text-electric-violetLight border border-electric-violet/30 shrink-0">
+                  Active Practice
+                </span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800/70 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">Algorithms &amp; Big-O</div>
+                  <div class="text-xs text-slate-400 font-mono">Searching, Sorting, Recursion, Complexity Analysis</div>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-medium bg-navy-950 text-electric-violetLight border border-electric-violet/30 shrink-0">
+                  Continuous Learning
+                </span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800/70 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">OOP Principles</div>
+                  <div class="text-xs text-slate-400 font-mono">Encapsulation, Inheritance, Polymorphism, Abstraction</div>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-medium bg-navy-950 text-electric-violetLight border border-electric-violet/30 shrink-0">
+                  Core Mastery
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-3 border-t border-navy-800/60 flex items-center justify-between text-xs text-slate-400 font-mono">
+            <span>3 Pillars</span>
+            <span class="text-emerald-400 flex items-center gap-1">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Daily Practice
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 3: Tools & Platforms -->
+        <div class="skill-category-card glass-card p-6 sm:p-7 rounded-2xl border-navy-800/80 flex flex-col justify-between group hover:border-soft-pink/40 transition-all duration-300 transform hover:-translate-y-1 shadow-xl" data-category="tools">
+          <div>
+            <div class="flex items-center gap-3 pb-4 border-b border-navy-800/80">
+              <div class="p-3 rounded-xl bg-navy-900 border border-navy-800 text-soft-pinkLight">
+                <i data-lucide="terminal" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white group-hover:text-soft-pinkLight transition-colors">Tools &amp; Environment</h3>
+                <p class="text-xs text-slate-400 mt-0.5">Developer workspace &amp; version control</p>
+              </div>
+            </div>
+
+            <div class="mt-5 space-y-3">
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800/70 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">Visual Studio Code</div>
+                  <div class="text-xs text-slate-400 font-mono">Primary Code Editor &amp; Debugger</div>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-medium bg-navy-950 text-soft-pinkLight border border-soft-pink/30 shrink-0">
+                  Primary IDE
+                </span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800/70 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">Git &amp; GitHub</div>
+                  <div class="text-xs text-slate-400 font-mono">Version Control, Commits, Collaboration</div>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-medium bg-navy-950 text-soft-pinkLight border border-soft-pink/30 shrink-0">
+                  SuriliReknod18
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-3 border-t border-navy-800/60 flex items-center justify-between text-xs text-slate-400 font-mono">
+            <span>2 Dev Tools</span>
+            <span class="text-emerald-400 flex items-center gap-1">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Daily Workflow
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 4: Areas of Interest -->
+        <div class="skill-category-card glass-card p-6 sm:p-7 rounded-2xl border-navy-800/80 flex flex-col justify-between group hover:border-amber-300/40 transition-all duration-300 transform hover:-translate-y-1 shadow-xl" data-category="interests">
+          <div>
+            <div class="flex items-center gap-3 pb-4 border-b border-navy-800/80">
+              <div class="p-3 rounded-xl bg-navy-900 border border-navy-800 text-amber-300">
+                <i data-lucide="layers" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white group-hover:text-amber-300 transition-colors">Areas of Special Interest</h3>
+                <p class="text-xs text-slate-400 mt-0.5">Technology domains &amp; career direction</p>
+              </div>
+            </div>
+
+            <div class="mt-5 space-y-3">
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800/70 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">Software Engineering</div>
+                  <div class="text-xs text-slate-400 font-mono">System Design &amp; Clean Code Architecture</div>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-medium bg-navy-950 text-amber-300 border border-amber-400/30 shrink-0">
+                  Career Goal
+                </span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800/70 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">Application Development</div>
+                  <div class="text-xs text-slate-400 font-mono">Digitizing Administrative Workflows</div>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-medium bg-navy-950 text-amber-300 border border-amber-400/30 shrink-0">
+                  Project Focus
+                </span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800/70 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">DBMS / SQL Foundations</div>
+                  <div class="text-xs text-slate-400 font-mono">Schema Organization &amp; Relational Queries</div>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-medium bg-navy-950 text-amber-300 border border-amber-400/30 shrink-0">
+                  Academic Focus
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-3 border-t border-navy-800/60 flex items-center justify-between text-xs text-slate-400 font-mono">
+            <span>3 Key Domains</span>
+            <span class="text-emerald-400 flex items-center gap-1">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Active Growth
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 5: Strengths & Passions -->
+        <div class="skill-category-card glass-card p-6 sm:p-7 rounded-2xl border-navy-800/80 flex flex-col justify-between group hover:border-emerald-400/40 transition-all duration-300 transform hover:-translate-y-1 shadow-xl" data-category="strengths">
+          <div>
+            <div class="flex items-center gap-3 pb-4 border-b border-navy-800/80">
+              <div class="p-3 rounded-xl bg-navy-900 border border-navy-800 text-emerald-300">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">Strengths &amp; Passions</h3>
+                <p class="text-xs text-slate-400 mt-0.5">Attributes shaping creative problem-solving</p>
+              </div>
+            </div>
+
+            <div class="mt-5 space-y-3">
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800/70 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">Analytical Problem Solving</div>
+                  <div class="text-xs text-slate-400 font-mono">Structured Breakdown of Complex Logic</div>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-medium bg-navy-950 text-emerald-300 border border-emerald-400/30 shrink-0">
+                  Core Strength
+                </span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800/70 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">Coding &amp; Software Dev</div>
+                  <div class="text-xs text-slate-400 font-mono">Daily Hobby &amp; Technical Discipline</div>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-medium bg-navy-950 text-emerald-300 border border-emerald-400/30 shrink-0">
+                  Hobby &amp; Craft
+                </span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800/70 flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold text-white">Cooking &amp; Culinary Arts</div>
+                  <div class="text-xs text-slate-400 font-mono">Creative Experimentation &amp; Precision</div>
+                </div>
+                <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-medium bg-navy-950 text-emerald-300 border border-emerald-400/30 shrink-0">
+                  Creative Outlet
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-3 border-t border-navy-800/60 flex items-center justify-between text-xs text-slate-400 font-mono">
+            <span>Holistic Mindset</span>
+            <span class="text-emerald-400 flex items-center gap-1">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Dedicated
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Recruiter Transparency Notice -->
+      <div class="mt-12 p-4 rounded-2xl bg-navy-900/60 border border-navy-800/80 max-w-2xl mx-auto flex items-center gap-3 text-xs text-slate-400 font-mono">
+        <i data-lucide="lightbulb" class="w-5 h-5 text-amber-400 shrink-0"></i>
+        <span>
+          <strong>Authentic Competencies:</strong> Skills represent authentic second-year engineering coursework, CodeChef verified certifications in C &amp; Java, and real projects. No arbitrary percentage bars.
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== E. FEATURED PROJECTS ==================== -->
+  <section id="projects" class="py-24 relative bg-navy-950/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-navy-900 border border-soft-pink/40 text-soft-pinkLight text-xs font-mono">
+          <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i>
+          <span>Practical Implementations</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Featured <span class="text-gradient-pink">Projects</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Academic software solutions, algorithmic practice repositories, and administrative automation systems built with clean code and structured architectures.
+        </p>
+      </div>
+
+      <!-- Featured Academic Spotlight Card -->
+      <div class="mb-14">
+        <div class="glass-card rounded-3xl p-7 sm:p-10 border-navy-800/90 relative overflow-hidden group hover:border-electric-violet/50 transition-all duration-300 shadow-2xl">
+          <div class="absolute -top-24 -right-24 w-80 h-80 bg-gradient-to-br from-electric-violet/30 via-neon-cyan/20 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Description -->
+            <div class="lg:col-span-7 space-y-5">
+              <div class="flex flex-wrap items-center gap-2.5">
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-neon-cyan/20 text-neon-cyanBright border border-neon-cyan/40">
+                  Primary Academic Project
+                </span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono text-electric-violetLight bg-navy-900 border border-electric-violet/30">
+                  In Progress (Academic Capstone)
+                </span>
+              </div>
+
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-neon-cyanLight transition-colors">
+                Online Student Leave Application System
+              </h3>
+
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                A comprehensive digital administrative portal streamlining student leave submissions and institutional faculty approvals.
+              </p>
+
+              <div class="p-4 rounded-2xl bg-navy-900/80 border border-navy-800 space-y-2">
+                <h4 class="text-xs font-mono uppercase tracking-wider text-neon-cyanBright">
+                  Problem Solved:
+                </h4>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  Traditional paper-based leave slips in colleges cause physical bottlenecks, delayed teacher signatures, misplaced records, and zero transparency. This project digitizes the entire lifecycle—allowing students to submit digital leave requests with categorized justifications and giving faculty a centralized dashboard for real-time approvals.
+                </p>
+              </div>
+
+              <!-- Capabilities -->
+              <div class="space-y-2 pt-1">
+                <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400">
+                  System Capabilities:
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
+                  <div class="flex items-start gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-neon-cyanLight shrink-0 mt-0.5"></i>
+                    <span>Student Portal for leave drafting with reason classification.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-neon-cyanLight shrink-0 mt-0.5"></i>
+                    <span>Faculty &amp; Admin Dashboard with 1-click Approve/Reject.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-neon-cyanLight shrink-0 mt-0.5"></i>
+                    <span>Live status tracking: Pending, Approved, Rejected.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-neon-cyanLight shrink-0 mt-0.5"></i>
+                    <span>Institutional audit log archiving historical submissions.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="px-3 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-200">Java</span>
+                <span class="px-3 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-200">HTML5</span>
+                <span class="px-3 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-200">CSS3</span>
+                <span class="px-3 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-200">JavaScript</span>
+                <span class="px-3 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-200">DBMS / SQL Concepts</span>
+                <span class="px-3 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-slate-200">OOP Design</span>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex flex-wrap items-center gap-3 pt-3">
+                <button onclick="openProjectModal('leave-system')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-electric-violet to-neon-cyan hover:opacity-95 shadow-lg shadow-electric-violet/25 transition-all transform hover:-translate-y-0.5">
+                  <i data-lucide="workflow" class="w-4 h-4"></i>
+                  <span>View Architecture &amp; Flow</span>
+                </button>
+
+                <a href="https://github.com/SuriliReknod18/Online-Student-Leave-Application-System" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold text-slate-200 hover:text-white bg-navy-900 hover:bg-navy-850 border border-navy-700 transition-all hover:border-neon-cyan/40">
+                  <i data-lucide="github" class="w-4 h-4"></i>
+                  <span>GitHub Repository</span>
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Flow Architecture Card -->
+            <div class="lg:col-span-5">
+              <div class="rounded-2xl bg-navy-900/90 border border-navy-800 p-6 space-y-4 shadow-xl">
+                <div class="flex items-center justify-between pb-3 border-b border-navy-800 text-xs font-mono text-slate-400">
+                  <span>Workflow Diagram</span>
+                  <span class="text-emerald-400">Digital Flow</span>
+                </div>
+
+                <div class="space-y-3 font-mono text-xs">
+                  <div class="p-3 rounded-xl bg-navy-950 border border-navy-800/80 flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                      <span class="w-5 h-5 rounded-full bg-neon-cyan/20 text-neon-cyanLight flex items-center justify-center text-[10px] font-bold">1</span>
+                      <span class="text-white">Student Submission</span>
+                    </div>
+                    <span class="text-[10px] text-slate-400">Reason &amp; Dates</span>
+                  </div>
+
+                  <div class="text-center text-slate-600 text-xs">↓</div>
+
+                  <div class="p-3 rounded-xl bg-navy-950 border border-navy-800/80 flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                      <span class="w-5 h-5 rounded-full bg-electric-violet/20 text-electric-violetLight flex items-center justify-center text-[10px] font-bold">2</span>
+                      <span class="text-white">Faculty Dashboard</span>
+                    </div>
+                    <span class="text-[10px] text-slate-400">Review &amp; Approve</span>
+                  </div>
+
+                  <div class="text-center text-slate-600 text-xs">↓</div>
+
+                  <div class="p-3 rounded-xl bg-navy-950 border border-navy-800/80 flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                      <span class="w-5 h-5 rounded-full bg-soft-pink/20 text-soft-pinkLight flex items-center justify-center text-[10px] font-bold">3</span>
+                      <span class="text-white">Live Status &amp; Archive</span>
+                    </div>
+                    <span class="text-[10px] text-emerald-400">Real-Time Sync</span>
+                  </div>
+                </div>
+
+                <div class="pt-2 text-center">
+                  <button onclick="openProjectModal('leave-system')" class="text-xs font-mono text-electric-violetLight hover:text-neon-cyanLight transition-colors">
+                    Inspect Full Architecture Specs →
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Additional Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Project 2: Java DSA Practice Lab -->
+        <div class="glass-card rounded-2xl p-7 border-navy-800/80 flex flex-col justify-between group hover:border-neon-cyan/40 transition-all duration-300 transform hover:-translate-y-1 shadow-xl">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-neon-cyanBright bg-navy-900 px-3 py-1 rounded-md border border-neon-cyan/30">
+                Algorithmic Problem Solving
+              </span>
+              <span class="text-xs font-mono text-slate-400">
+                Completed Lab
+              </span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white group-hover:text-neon-cyanLight transition-colors">
+              Java Data Structures &amp; Algorithms Practice Lab
+            </h3>
+
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Curated repository of algorithmic solutions, linear/non-linear data structure implementations, and Big-O complexity analyses in Java.
+            </p>
+
+            <div class="p-3.5 rounded-xl bg-navy-900/80 border border-navy-800 text-xs text-slate-300 leading-relaxed">
+              <strong class="text-white block mb-1">Focus &amp; Design:</strong>
+              From-scratch implementations of Linked Lists, Stacks, Queues, Binary Trees, and sorting/searching patterns without relying on black-box libraries.
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-navy-900 border border-navy-800 text-slate-300">Java</span>
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-navy-900 border border-navy-800 text-slate-300">Data Structures</span>
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-navy-900 border border-navy-800 text-slate-300">Algorithms</span>
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-navy-900 border border-navy-800 text-slate-300">Big-O Analysis</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-navy-800/80 flex items-center justify-between">
+            <button onclick="openProjectModal('dsa-lab')" class="text-xs font-semibold text-electric-violetLight hover:text-neon-cyanLight transition-colors inline-flex items-center gap-1">
+              <span>Project Specs</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </button>
+
+            <a href="https://github.com/SuriliReknod18/Java-DSA-Solutions" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white bg-navy-900 hover:bg-navy-850 border border-navy-800 transition-colors">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              <span>Code</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: Student Academic Record System -->
+        <div class="glass-card rounded-2xl p-7 border-navy-800/80 flex flex-col justify-between group hover:border-soft-pink/40 transition-all duration-300 transform hover:-translate-y-1 shadow-xl">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-soft-pinkLight bg-navy-900 px-3 py-1 rounded-md border border-soft-pink/30">
+                Java &amp; Database Application
+              </span>
+              <span class="text-xs font-mono text-slate-400">
+                Active Concept
+              </span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white group-hover:text-soft-pinkLight transition-colors">
+              Student Academic Record &amp; Grade Analyzer
+            </h3>
+
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Console &amp; GUI-based academic record management system for calculating semester SGPA/CGPA and tracking student academic standing.
+            </p>
+
+            <div class="p-3.5 rounded-xl bg-navy-900/80 border border-navy-800 text-xs text-slate-300 leading-relaxed">
+              <strong class="text-white block mb-1">Focus &amp; Design:</strong>
+              Encapsulates student models, credit schemes, validation rules, and automated GPA calculations based on standard university grading metrics.
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-navy-900 border border-navy-800 text-slate-300">Java</span>
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-navy-900 border border-navy-800 text-slate-300">OOP Design</span>
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-navy-900 border border-navy-800 text-slate-300">File I/O</span>
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-navy-900 border border-navy-800 text-slate-300">VS Code</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-navy-800/80 flex items-center justify-between">
+            <button onclick="openProjectModal('grade-analyzer')" class="text-xs font-semibold text-soft-pinkLight hover:text-white transition-colors inline-flex items-center gap-1">
+              <span>Project Specs</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </button>
+
+            <a href="https://github.com/SuriliReknod18" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white bg-navy-900 hover:bg-navy-850 border border-navy-800 transition-colors">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              <span>Code</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== F. CERTIFICATIONS & CODECHEF ==================== -->
+  <section id="certifications" class="py-24 relative bg-midnight-mesh">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-navy-900 border border-amber-400/40 text-amber-300 text-xs font-mono">
+          <i data-lucide="award" class="w-3.5 h-3.5"></i>
+          <span>Verified Credentials</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Certifications &amp; <span class="text-gradient-violet">CodeChef Profile</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Industry-recognized programming certificates from CodeChef, verified problem-solving track, and key academic achievements.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Verified Programming Certifications (7 Cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-5 h-5 text-neon-cyanLight"></i>
+            <span>Programming Certifications</span>
+          </h3>
+
+          <div class="space-y-4">
+            
+            <!-- CodeChef Java Certificate -->
+            <div class="glass-card p-6 sm:p-7 rounded-2xl border-navy-800/80 space-y-4 group hover:border-amber-400/40 transition-all duration-300 shadow-xl">
+              <div class="flex items-start justify-between flex-wrap gap-3 pb-3 border-b border-navy-800/80">
+                <div class="flex items-center gap-3">
+                  <div class="p-3 rounded-2xl bg-amber-950/50 border border-amber-500/30 text-amber-400">
+                    <i data-lucide="award" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+                      Java Programming Language Certification
+                    </h4>
+                    <div class="flex items-center gap-2 mt-0.5 text-xs font-mono">
+                      <span class="text-amber-400 font-semibold">CodeChef</span>
+                      <span class="text-slate-500">•</span>
+                      <span class="text-slate-400">Certified 2024</span>
+                    </div>
+                  </div>
+                </div>
+
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-950/80 text-emerald-300 border border-emerald-500/30">
+                  Verified
+                </span>
+              </div>
+
+              <div class="space-y-1.5">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">
+                  Core Syllabus &amp; Tested Competencies:
+                </span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Core Java Syntax</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">OOP (Inheritance, Polymorphism)</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Memory Management</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Exception Handling</span>
+                </div>
+              </div>
+
+              <div class="pt-3 border-t border-navy-800/60 flex items-center justify-between text-xs">
+                <span class="text-slate-400 font-mono">Issuer: CodeChef Assessment</span>
+                <a href="https://www.codechef.com/certificates" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-neon-cyanLight hover:text-white font-medium">
+                  <span>Verify on CodeChef</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- CodeChef C Certificate -->
+            <div class="glass-card p-6 sm:p-7 rounded-2xl border-navy-800/80 space-y-4 group hover:border-amber-400/40 transition-all duration-300 shadow-xl">
+              <div class="flex items-start justify-between flex-wrap gap-3 pb-3 border-b border-navy-800/80">
+                <div class="flex items-center gap-3">
+                  <div class="p-3 rounded-2xl bg-amber-950/50 border border-amber-500/30 text-amber-400">
+                    <i data-lucide="award" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+                      C Programming Language Certification
+                    </h4>
+                    <div class="flex items-center gap-2 mt-0.5 text-xs font-mono">
+                      <span class="text-amber-400 font-semibold">CodeChef</span>
+                      <span class="text-slate-500">•</span>
+                      <span class="text-slate-400">Certified 2024</span>
+                    </div>
+                  </div>
+                </div>
+
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-950/80 text-emerald-300 border border-emerald-500/30">
+                  Verified
+                </span>
+              </div>
+
+              <div class="space-y-1.5">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">
+                  Core Syllabus &amp; Tested Competencies:
+                </span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Pointers &amp; Dynamic Memory</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Data Types &amp; Arrays</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Algorithmic Control Flow</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Standard I/O &amp; Structs</span>
+                </div>
+              </div>
+
+              <div class="pt-3 border-t border-navy-800/60 flex items-center justify-between text-xs">
+                <span class="text-slate-400 font-mono">Issuer: CodeChef Assessment</span>
+                <a href="https://www.codechef.com/certificates" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-neon-cyanLight hover:text-white font-medium">
+                  <span>Verify on CodeChef</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Academic Honors Box -->
+          <div class="glass-card p-6 rounded-2xl border-navy-800/80 space-y-3">
+            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+              <i data-lucide="trophy" class="w-4 h-4 text-amber-400"></i>
+              <span>Academic Honors &amp; Board Distinctions</span>
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800 flex items-center justify-between">
+                <div>
+                  <span class="text-white font-semibold block">Secondary School (10th)</span>
+                  <span class="text-slate-400">Maharashtra State Board</span>
+                </div>
+                <span class="text-sm font-extrabold text-neon-cyanBright">90.20%</span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800 flex items-center justify-between">
+                <div>
+                  <span class="text-white font-semibold block">Higher Secondary (12th)</span>
+                  <span class="text-slate-400">Science Stream</span>
+                </div>
+                <span class="text-sm font-extrabold text-electric-violetLight">84.67%</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Dedicated CodeChef Profile Showcase (5 Cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <i data-lucide="code-2" class="w-5 h-5 text-soft-pinkLight"></i>
+            <span>Official CodeChef Profile</span>
+          </h3>
+
+          <div class="glass-card p-7 rounded-3xl border-navy-800/90 space-y-6 shadow-2xl relative overflow-hidden group hover:border-soft-pink/40 transition-all">
+            
+            <div class="flex items-start justify-between pb-4 border-b border-navy-800/80">
+              <div class="flex items-center gap-3">
+                <div class="p-3 rounded-2xl bg-gradient-to-br from-amber-500/20 to-soft-pink/20 border border-amber-500/40 text-amber-300">
+                  <i data-lucide="code-2" class="w-7 h-7"></i>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h4 class="text-lg font-bold text-white">CodeChef</h4>
+                    <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-950 text-amber-300 border border-amber-500/30">
+                      Competitive Dev
+                    </span>
+                  </div>
+                  <span class="text-xs font-mono text-neon-cyanBright">
+                    @surilireknod
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Information Technology undergraduate actively practicing computational logic, algorithmic challenges, and programming language constructs.
+            </p>
+
+            <div class="grid grid-cols-2 gap-3 font-mono">
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800 space-y-1">
+                <span class="text-[10px] uppercase text-slate-400">Certified Tracks</span>
+                <div class="text-base font-bold text-white">Java &amp; C</div>
+                <span class="text-[10px] text-emerald-400">Verified Completed</span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-navy-900/80 border border-navy-800 space-y-1">
+                <span class="text-[10px] uppercase text-slate-400">Division Focus</span>
+                <div class="text-base font-bold text-amber-300">DSA Practice</div>
+                <span class="text-[10px] text-slate-400">Active Learning</span>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">
+                Problem Solving Focus:
+              </span>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Foundational Algorithms</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Mathematical Reasoning</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Array Manipulations</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-navy-900 border border-navy-800 text-slate-300">Time Complexity</span>
+              </div>
+            </div>
+
+            <!-- Profile Action -->
+            <div class="pt-2">
+              <a href="https://www.codechef.com/users/surilireknod" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-electric-violet via-purple-600 to-soft-pink hover:opacity-95 shadow-lg shadow-purple-900/40 transition-all transform hover:-translate-y-0.5">
+                <span>Visit CodeChef Profile</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            <!-- Editable ID Note -->
+            <div class="p-3.5 rounded-xl bg-navy-900/50 border border-navy-800 text-[11px] font-mono text-slate-400 leading-relaxed">
+              <span>💡 Recruiter Notice:</span> Profile linked to <code class="text-neon-cyanBright">https://www.codechef.com/users/surilireknod</code>. You can customize the ID anytime in <code class="text-electric-violetLight">src/data/portfolioData.ts</code>.
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== G. CAREER GOALS & ROADMAP ==================== -->
+  <section id="career-goals" class="py-24 relative bg-navy-950/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-navy-900 border border-electric-violet/40 text-electric-violetLight text-xs font-mono">
+          <i data-lucide="target" class="w-3.5 h-3.5"></i>
+          <span>Aspirations &amp; Strategy</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Career Goals &amp; <span class="text-gradient-main">Engineering Roadmap</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Targeting Software Development Engineering (SDE) roles at top-tier global technology enterprises through structured milestones.
+        </p>
+      </div>
+
+      <!-- Target Companies Showcase Grid -->
+      <div class="mb-16">
+        <div class="glass-card p-6 sm:p-8 rounded-3xl border-navy-800/80 space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-navy-800/80">
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="building-2" class="w-5 h-5 text-neon-cyanLight"></i>
+              <h3 class="text-base sm:text-lg font-bold text-white">
+                Target Tech Companies for SDE Placement
+              </h3>
+            </div>
+            <span class="text-xs font-mono text-slate-400">
+              Aspirations: Software Development Engineer
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <!-- Microsoft -->
+            <div class="p-5 rounded-2xl bg-navy-900/80 border border-navy-800/80 hover:border-cyan-500/40 transition-all duration-300 transform hover:-translate-y-1 space-y-3">
+              <div class="flex items-center justify-between">
+                <h4 class="text-lg font-extrabold text-white">Microsoft</h4>
+                <span class="w-2 h-2 rounded-full bg-neon-cyanLight animate-pulse"></span>
+              </div>
+              <div>
+                <span class="text-xs font-mono text-neon-cyanBright block font-semibold">Software Development Engineer</span>
+                <span class="text-[11px] text-slate-400 mt-1 block">Cloud, AI &amp; Developer Platforms</span>
+              </div>
+            </div>
+
+            <!-- Google -->
+            <div class="p-5 rounded-2xl bg-navy-900/80 border border-navy-800/80 hover:border-pink-500/40 transition-all duration-300 transform hover:-translate-y-1 space-y-3">
+              <div class="flex items-center justify-between">
+                <h4 class="text-lg font-extrabold text-white">Google</h4>
+                <span class="w-2 h-2 rounded-full bg-soft-pinkLight animate-pulse"></span>
+              </div>
+              <div>
+                <span class="text-xs font-mono text-soft-pinkLight block font-semibold">Associate Software Engineer</span>
+                <span class="text-[11px] text-slate-400 mt-1 block">Distributed Systems &amp; Core Infrastructure</span>
+              </div>
+            </div>
+
+            <!-- Amazon -->
+            <div class="p-5 rounded-2xl bg-navy-900/80 border border-navy-800/80 hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 space-y-3">
+              <div class="flex items-center justify-between">
+                <h4 class="text-lg font-extrabold text-white">Amazon</h4>
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              </div>
+              <div>
+                <span class="text-xs font-mono text-amber-300 block font-semibold">SDE I</span>
+                <span class="text-[11px] text-slate-400 mt-1 block">High-Scale E-Commerce &amp; AWS Services</span>
+              </div>
+            </div>
+
+            <!-- Samsung -->
+            <div class="p-5 rounded-2xl bg-navy-900/80 border border-navy-800/80 hover:border-violet-500/40 transition-all duration-300 transform hover:-translate-y-1 space-y-3">
+              <div class="flex items-center justify-between">
+                <h4 class="text-lg font-extrabold text-white">Samsung</h4>
+                <span class="w-2 h-2 rounded-full bg-electric-violetLight animate-pulse"></span>
+              </div>
+              <div>
+                <span class="text-xs font-mono text-electric-violetLight block font-semibold">Software R&amp;D Engineer</span>
+                <span class="text-[11px] text-slate-400 mt-1 block">Mobile Ecosystems &amp; Systems Software</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 4-Phase Roadmap -->
+      <div class="space-y-6 mb-16">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="compass" class="w-5 h-5 text-soft-pinkLight"></i>
+          <h3 class="text-lg font-bold text-white">
+            Strategic Multi-Year Development Roadmap
+          </h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Phase 1 -->
+          <div class="glass-card p-6 rounded-2xl border-navy-800/80 flex flex-col justify-between space-y-4 hover:border-emerald-500/40 transition-all">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-semibold text-slate-400">Phase 1 (Year 2)</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-emerald-950/80 text-emerald-300 border border-emerald-500/30">
+                  Current Focus
+                </span>
+              </div>
+              <h4 class="text-base font-bold text-white">Foundations &amp; Academic Rigor</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Deep dive into Data Structures &amp; Algorithms in Java, maintain strong CGPA at RCPIT Shirpur, complete the Online Student Leave Application System, and maintain active CodeChef practice.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-navy-800/60 space-y-1.5 text-[11px] text-slate-300">
+              <div class="flex items-start gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-neon-cyanLight shrink-0 mt-0.5"></i> Solve 200+ core DSA problems.</div>
+              <div class="flex items-start gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-neon-cyanLight shrink-0 mt-0.5"></i> Deploy student leave system prototype.</div>
+            </div>
+          </div>
+
+          <!-- Phase 2 -->
+          <div class="glass-card p-6 rounded-2xl border-navy-800/80 flex flex-col justify-between space-y-4 hover:border-electric-violet/40 transition-all">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-semibold text-slate-400">Phase 2 (Year 3)</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-electric-violet/20 text-electric-violetLight border border-electric-violet/40">
+                  Next Milestone
+                </span>
+              </div>
+              <h4 class="text-base font-bold text-white">Advanced Web &amp; Open Source</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Expand into modern full-stack web architectures, explore backend API design (Spring Boot / Node.js), participate in regional hackathons, and contribute to open-source software.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-navy-800/60 space-y-1.5 text-[11px] text-slate-300">
+              <div class="flex items-start gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-neon-cyanLight shrink-0 mt-0.5"></i> Build production-grade full stack apps.</div>
+              <div class="flex items-start gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-neon-cyanLight shrink-0 mt-0.5"></i> Crack university technical hackathons.</div>
+            </div>
+          </div>
+
+          <!-- Phase 3 -->
+          <div class="glass-card p-6 rounded-2xl border-navy-800/80 flex flex-col justify-between space-y-4 hover:border-neon-cyan/40 transition-all">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-semibold text-slate-400">Phase 3 (Year 4)</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-neon-cyan/20 text-neon-cyanBright border border-neon-cyan/30">
+                  Future Target
+                </span>
+              </div>
+              <h4 class="text-base font-bold text-white">Internships &amp; Placements</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Secure a prestigious Software Development Engineering (SDE) internship and successfully participate in on-campus &amp; off-campus hiring drives for top technology companies.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-navy-800/60 space-y-1.5 text-[11px] text-slate-300">
+              <div class="flex items-start gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-neon-cyanLight shrink-0 mt-0.5"></i> Complete mock coding &amp; system rounds.</div>
+              <div class="flex items-start gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-neon-cyanLight shrink-0 mt-0.5"></i> Crack Tier-1 technical hiring loops.</div>
+            </div>
+          </div>
+
+          <!-- Phase 4 -->
+          <div class="glass-card p-6 rounded-2xl border-navy-800/80 flex flex-col justify-between space-y-4 hover:border-soft-pink/40 transition-all">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-semibold text-slate-400">Phase 4 (Long-Term)</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-soft-pink/20 text-soft-pinkLight border border-soft-pink/30">
+                  Long-term Goal
+                </span>
+              </div>
+              <h4 class="text-base font-bold text-white">Software Engineer at Top Tech</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Begin professional career as a high-impact Software Engineer at premier innovators such as Microsoft, Google, Amazon, or Samsung—architecting robust systems that serve millions worldwide.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-navy-800/60 space-y-1.5 text-[11px] text-slate-300">
+              <div class="flex items-start gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-neon-cyanLight shrink-0 mt-0.5"></i> Architect scalable distributed systems.</div>
+              <div class="flex items-start gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-neon-cyanLight shrink-0 mt-0.5"></i> Mentor future women in engineering.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Why Recruit Surili Pitch Box -->
+      <div class="glass-card rounded-3xl p-7 sm:p-8 border-navy-800/80 bg-gradient-to-r from-navy-900/90 via-navy-850 to-navy-900/90 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+        <div class="space-y-2">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-electric-violet/20 border border-electric-violet/40 text-electric-violetLight text-xs font-mono">
+            <i data-lucide="rocket" class="w-3.5 h-3.5"></i>
+            <span>Recruiter Value Proposition</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold text-white">
+            Why I Am Ready to Add Value to Your Engineering Team
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+            Consistently high academic track record (90.20% in 10th, 84.67% in 12th, 7.26 First-Year CGPA), verified programming rigor in Java and C with CodeChef certificates, proactive project delivery in student management automation, and intense dedication to continuous improvement.
+          </p>
+        </div>
+
+        <div class="shrink-0">
+          <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-electric-violet to-neon-cyan hover:opacity-95 shadow-lg shadow-electric-violet/30 transition-all transform hover:-translate-y-0.5">
+            <span>Initiate Conversation</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== H. CONTACT SECTION ==================== -->
+  <section id="contact" class="py-24 relative bg-navy-950/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-navy-900 border border-neon-cyan/40 text-neon-cyanBright text-xs font-mono">
+          <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+          <span>Direct Communication</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Have a project in mind? <span class="text-gradient-cyan">Let's build something great.</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          I am currently open to Software Engineering internship opportunities, academic collaborations, and technical discussions.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- Direct Contact Info Cards (5 Cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="glass-card p-6 sm:p-7 rounded-3xl border-navy-800/80 space-y-6 shadow-xl">
+            <div>
+              <h3 class="text-lg font-bold text-white">Contact Information</h3>
+              <p class="text-xs text-slate-400 mt-1">
+                Feel free to reach out directly via email, phone, or professional platforms.
+              </p>
+            </div>
+
+            <!-- Email Card -->
+            <div class="p-4 rounded-2xl bg-navy-900/80 border border-navy-800 space-y-2 group hover:border-neon-cyan/40 transition-colors">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2 text-xs font-mono text-neon-cyanBright">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <span>Email Address</span>
+                </div>
+                <button onclick="copyToClipboard('surelireknod@gmail.com', this)" class="p-1.5 rounded-lg bg-navy-950 text-slate-400 hover:text-white border border-navy-800 transition-colors" title="Copy Email">
+                  <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                </button>
+              </div>
+              <a href="mailto:surelireknod@gmail.com" class="text-sm font-semibold text-white group-hover:text-neon-cyanLight transition-colors block break-all">
+                surelireknod@gmail.com
+              </a>
+            </div>
+
+            <!-- Phone Card -->
+            <div class="p-4 rounded-2xl bg-navy-900/80 border border-navy-800 space-y-2 group hover:border-electric-violet/40 transition-colors">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2 text-xs font-mono text-electric-violetLight">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                  <span>Phone Number</span>
+                </div>
+                <button onclick="copyToClipboard('8262007814', this)" class="p-1.5 rounded-lg bg-navy-950 text-slate-400 hover:text-white border border-navy-800 transition-colors" title="Copy Phone">
+                  <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                </button>
+              </div>
+              <a href="tel:8262007814" class="text-sm font-semibold text-white group-hover:text-electric-violetLight transition-colors block">
+                +91 8262007814
+              </a>
+            </div>
+
+            <!-- Permanent Location Card -->
+            <div class="p-4 rounded-2xl bg-navy-900/80 border border-navy-800 space-y-1">
+              <div class="flex items-center gap-2 text-xs font-mono text-soft-pinkLight">
+                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                <span>Permanent Location</span>
+              </div>
+              <div class="text-sm font-semibold text-white">Chhatrapati Sambhajinagar</div>
+              <div class="text-xs text-slate-400 font-mono">Maharashtra, India</div>
+            </div>
+
+            <!-- College Campus Card -->
+            <div class="p-4 rounded-2xl bg-navy-900/80 border border-navy-800 space-y-1">
+              <div class="flex items-center gap-2 text-xs font-mono text-amber-300">
+                <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                <span>College Campus</span>
+              </div>
+              <div class="text-sm font-semibold text-white">R. C. Patel Institute of Technology</div>
+              <div class="text-xs text-slate-400">Shirpur, Dist. Dhule, Maharashtra</div>
+            </div>
+
+            <!-- Social Direct Icons -->
+            <div class="pt-2 border-t border-navy-800/80 space-y-3">
+              <span class="text-xs font-mono uppercase tracking-wider text-slate-400 block">
+                Professional Channels:
+              </span>
+              <div class="grid grid-cols-3 gap-2">
+                <a href="https://www.linkedin.com/in/surili-reknod-5a689842a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-navy-900/90 border border-navy-800 hover:border-electric-violet/50 text-slate-300 hover:text-white flex flex-col items-center justify-center gap-1.5 transition-all group">
+                  <i data-lucide="linkedin" class="w-5 h-5 text-electric-violetLight group-hover:scale-110 transition-transform"></i>
+                  <span class="text-[11px] font-medium">LinkedIn</span>
+                </a>
+
+                <a href="https://github.com/SuriliReknod18" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-navy-900/90 border border-navy-800 hover:border-neon-cyan/50 text-slate-300 hover:text-white flex flex-col items-center justify-center gap-1.5 transition-all group">
+                  <i data-lucide="github" class="w-5 h-5 text-neon-cyanLight group-hover:scale-110 transition-transform"></i>
+                  <span class="text-[11px] font-medium">GitHub</span>
+                </a>
+
+                <a href="https://www.codechef.com/users/surilireknod" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-navy-900/90 border border-navy-800 hover:border-amber-400/50 text-slate-300 hover:text-white flex flex-col items-center justify-center gap-1.5 transition-all group">
+                  <i data-lucide="award" class="w-5 h-5 text-amber-400 group-hover:scale-110 transition-transform"></i>
+                  <span class="text-[11px] font-medium">CodeChef</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Contact Form (7 Cols) -->
+        <div class="lg:col-span-7">
+          <div class="glass-card p-7 sm:p-9 rounded-3xl border-navy-800/80 shadow-2xl space-y-6">
+            
+            <div class="border-b border-navy-800/80 pb-4">
+              <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                <i data-lucide="message-square" class="w-5 h-5 text-neon-cyanLight"></i>
+                <span>Send a Direct Message</span>
+              </h3>
+              <p class="text-xs text-slate-400 mt-1">
+                Fill in the details below. This client validates your request and initiates an email directly to Surili.
+              </p>
+            </div>
+
+            <!-- Success Alert -->
+            <div id="form-success" class="hidden p-4 rounded-2xl bg-emerald-950/80 border border-emerald-500/40 text-emerald-200 text-xs flex items-center gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 shrink-0"></i>
+              <div>
+                <strong class="block text-emerald-300 font-semibold">Message Prepared!</strong>
+                <span>Your default mail client has opened with your drafted message. You can also reach Surili directly at surelireknod@gmail.com.</span>
+              </div>
+            </div>
+
+            <form id="contact-form" onsubmit="handleFormSubmit(event)" novalidate class="space-y-4">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Name -->
+                <div class="space-y-1.5">
+                  <label for="form-name" class="text-xs font-mono text-slate-300 block">
+                    Your Full Name <span class="text-soft-pinkLight">*</span>
+                  </label>
+                  <input type="text" id="form-name" placeholder="e.g. Priyanshu Sharma" class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-800 focus:border-neon-cyan/60 focus:ring-1 focus:ring-neon-cyan/40 text-sm text-white placeholder-slate-500 focus:outline-none transition-all">
+                  <span id="err-name" class="hidden text-[11px] text-red-400 items-center gap-1 mt-1">
+                    <i data-lucide="alert-circle" class="w-3 h-3"></i>
+                    Please enter your name (min 2 characters).
+                  </span>
+                </div>
+
+                <!-- Email -->
+                <div class="space-y-1.5">
+                  <label for="form-email" class="text-xs font-mono text-slate-300 block">
+                    Email Address <span class="text-soft-pinkLight">*</span>
+                  </label>
+                  <input type="email" id="form-email" placeholder="e.g. recruiter@company.com" class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-800 focus:border-neon-cyan/60 focus:ring-1 focus:ring-neon-cyan/40 text-sm text-white placeholder-slate-500 focus:outline-none transition-all">
+                  <span id="err-email" class="hidden text-[11px] text-red-400 items-center gap-1 mt-1">
+                    <i data-lucide="alert-circle" class="w-3 h-3"></i>
+                    Please enter a valid email address.
+                  </span>
+                </div>
+              </div>
+
+              <!-- Subject -->
+              <div class="space-y-1.5">
+                <label for="form-subject" class="text-xs font-mono text-slate-300 block">
+                  Subject / Topic <span class="text-soft-pinkLight">*</span>
+                </label>
+                <input type="text" id="form-subject" placeholder="e.g. SDE Internship Opportunity / Academic Collaboration" class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-800 focus:border-electric-violet/60 focus:ring-1 focus:ring-electric-violet/40 text-sm text-white placeholder-slate-500 focus:outline-none transition-all">
+                <span id="err-subject" class="hidden text-[11px] text-red-400 items-center gap-1 mt-1">
+                  <i data-lucide="alert-circle" class="w-3 h-3"></i>
+                  Please provide a subject.
+                </span>
+              </div>
+
+              <!-- Message -->
+              <div class="space-y-1.5">
+                <label for="form-message" class="text-xs font-mono text-slate-300 block">
+                  Your Message <span class="text-soft-pinkLight">*</span>
+                </label>
+                <textarea id="form-message" rows="5" placeholder="Describe your role requirements, opportunity details, or questions..." class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-800 focus:border-neon-cyan/60 focus:ring-1 focus:ring-neon-cyan/40 text-sm text-white placeholder-slate-500 focus:outline-none transition-all resize-y"></textarea>
+                <span id="err-message" class="hidden text-[11px] text-red-400 items-center gap-1 mt-1">
+                  <i data-lucide="alert-circle" class="w-3 h-3"></i>
+                  Please enter at least 10 characters.
+                </span>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-electric-violet via-purple-600 to-neon-cyan hover:opacity-95 shadow-lg shadow-electric-violet/30 hover:shadow-glow-multi transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                  <i data-lucide="send" class="w-4 h-4 text-cyan-200"></i>
+                  <span>Send Message Directly</span>
+                </button>
+              </div>
+
+              <p class="text-[11px] text-slate-500 font-mono text-center pt-2">
+                🔒 Transparent Notice: Validated inputs generate a direct email communication via standard protocols. No third-party data tracking.
+              </p>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== I. FOOTER ==================== -->
+  <footer class="bg-navy-950 border-t border-navy-850 pt-16 pb-12 relative overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-gradient-to-b from-electric-violet/10 via-neon-cyan/5 to-transparent blur-2xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-navy-850">
+        
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-electric-violet via-neon-cyan to-soft-pink p-[1.5px] shadow-lg">
+              <div class="w-full h-full bg-navy-950 rounded-[10px] flex items-center justify-center font-bold text-sm text-white">
+                SR
+              </div>
+            </div>
+            <div>
+              <span class="font-bold text-base text-white tracking-tight block">
+                Surili Govindsing Reknod
+              </span>
+              <span class="text-xs font-mono text-neon-cyanBright">
+                IT Student • Aspiring Software Engineer
+              </span>
+            </div>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-400 max-w-sm leading-relaxed">
+            "Building digital experiences that make an impact." Crafting intuitive software solutions and algorithmic systems at R. C. Patel Institute of Technology, Shirpur.
+          </p>
+
+          <div class="text-xs font-mono text-slate-500">
+            Chhatrapati Sambhajinagar &amp; Shirpur, Maharashtra, India
+          </div>
+        </div>
+
+        <div class="md:col-span-4 space-y-3">
+          <h4 class="text-xs font-mono uppercase tracking-wider text-white">
+            Quick Navigation
+          </h4>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <a href="#home" class="text-slate-400 hover:text-neon-cyanBright transition-colors py-1">Home</a>
+            <a href="#about" class="text-slate-400 hover:text-neon-cyanBright transition-colors py-1">About &amp; Education</a>
+            <a href="#skills" class="text-slate-400 hover:text-neon-cyanBright transition-colors py-1">Technical Skills</a>
+            <a href="#projects" class="text-slate-400 hover:text-neon-cyanBright transition-colors py-1">Featured Projects</a>
+            <a href="#certifications" class="text-slate-400 hover:text-neon-cyanBright transition-colors py-1">Certifications</a>
+            <a href="#career-goals" class="text-slate-400 hover:text-neon-cyanBright transition-colors py-1">Career Goals</a>
+            <a href="#contact" class="text-slate-400 hover:text-neon-cyanBright transition-colors py-1">Contact</a>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 space-y-4 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h4 class="text-xs font-mono uppercase tracking-wider text-white">
+              Connect Directly
+            </h4>
+            <div class="flex items-center gap-2">
+              <a href="https://github.com/SuriliReknod18" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-navy-900 border border-navy-800 hover:border-neon-cyan/50 text-slate-300 hover:text-white transition-all" aria-label="GitHub">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/surili-reknod-5a689842a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-navy-900 border border-navy-800 hover:border-electric-violet/50 text-slate-300 hover:text-white transition-all" aria-label="LinkedIn">
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+              </a>
+              <a href="https://www.codechef.com/users/surilireknod" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-navy-900 border border-navy-800 hover:border-amber-400/50 text-slate-300 hover:text-white transition-all" aria-label="CodeChef">
+                <i data-lucide="award" class="w-4 h-4 text-amber-400"></i>
+              </a>
+              <a href="mailto:surelireknod@gmail.com" class="p-2.5 rounded-xl bg-navy-900 border border-navy-800 hover:border-emerald-500/50 text-slate-300 hover:text-white transition-all" aria-label="Email">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </a>
+              <a href="tel:8262007814" class="p-2.5 rounded-xl bg-navy-900 border border-navy-800 hover:border-cyan-500/50 text-slate-300 hover:text-white transition-all" aria-label="Call">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium text-slate-300 hover:text-white bg-navy-900 hover:bg-navy-850 border border-navy-800 hover:border-electric-violet/40 transition-all">
+              <span>Back to Top</span>
+              <i data-lucide="arrow-up" class="w-3.5 h-3.5 text-neon-cyanLight"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+        <div>
+          &copy; <span id="copyright-year">2026</span> Surili Govindsing Reknod. All rights reserved.
+        </div>
+        <div class="flex items-center gap-1.5 text-slate-400">
+          <span>Designed for Recruiter Excellence</span>
+          <span>•</span>
+          <span class="text-electric-violetLight">React + TypeScript</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== RESUME MODAL DIALOG ==================== -->
+  <div id="resume-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-navy-950/85 backdrop-blur-md">
+    <div class="relative w-full max-w-4xl max-h-[92vh] flex flex-col glass-card rounded-3xl border border-electric-violet/40 shadow-2xl overflow-hidden">
+      
+      <!-- Toolbar -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-navy-800 bg-navy-950/90">
+        <div class="flex items-center gap-2.5">
+          <div class="p-2 rounded-xl bg-electric-violet/20 text-electric-violetLight">
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white">
+              Curriculum Vitae — Surili Govindsing Reknod
+            </h3>
+            <p class="text-xs text-neon-cyanBright font-mono">
+              Verified Academic &amp; Technical Profile
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button onclick="window.print()" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-300 hover:text-white bg-navy-900 border border-navy-800 hover:border-slate-700 transition-colors">
+            <i data-lucide="printer" class="w-3.5 h-3.5 text-slate-300"></i>
+            <span>Print</span>
+          </button>
+
+          <a href="public/resume.pdf" download="Surili_Govindsing_Reknod_Resume.pdf" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-electric-violet to-neon-cyan hover:opacity-95 shadow-md shadow-electric-violet/30 transition-all">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i>
+            <span>Download PDF</span>
+          </a>
+
+          <button onclick="closeResumeModal()" class="p-1.5 rounded-xl text-slate-400 hover:text-white bg-navy-900 border border-navy-800 hover:border-slate-700 transition-colors ml-1" aria-label="Close">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Resume Content -->
+      <div class="flex-1 overflow-y-auto p-6 sm:p-10 space-y-8 bg-navy-950/60 text-slate-200">
+        
+        <div class="border-b border-navy-800 pb-6 space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="relative w-20 h-26 sm:w-24 sm:h-32 shrink-0 rounded-2xl bg-gradient-to-br from-electric-violet via-neon-cyan to-soft-pink p-[2px] shadow-lg">
+                <img src="profile.jpg" alt="Surili Govindsing Reknod" class="w-full h-full object-cover object-top rounded-[14px]">
+              </div>
+              <div>
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                  Surili Govindsing Reknod
+                </h1>
+                <p class="text-sm font-semibold text-neon-cyanBright mt-0.5">
+                  Information Technology Student | Aspiring Software Engineer
+                </p>
+                <p class="text-xs text-slate-400">
+                  R. C. Patel Institute of Technology, Shirpur, Maharashtra
+                </p>
+              </div>
+            </div>
+
+            <div class="text-xs font-mono space-y-1 text-slate-300">
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-neon-cyanLight"></i>
+                <span>Chhatrapati Sambhajinagar, Maharashtra</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="mail" class="w-3.5 h-3.5 text-electric-violetLight"></i>
+                <a href="mailto:surelireknod@gmail.com" class="hover:underline">surelireknod@gmail.com</a>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="phone" class="w-3.5 h-3.5 text-soft-pinkLight"></i>
+                <a href="tel:8262007814" class="hover:underline">+91 8262007814</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2 text-xs font-mono text-slate-400">
+            <a href="https://www.linkedin.com/in/surili-reknod-5a689842a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="text-electric-violetLight hover:underline flex items-center gap-1">
+              <i data-lucide="linkedin" class="w-3 h-3"></i> LinkedIn Profile
+            </a>
+            <span>•</span>
+            <a href="https://github.com/SuriliReknod18" target="_blank" rel="noopener noreferrer" class="text-neon-cyanLight hover:underline flex items-center gap-1">
+              <i data-lucide="github" class="w-3 h-3"></i> GitHub Profile
+            </a>
+            <span>•</span>
+            <a href="https://www.codechef.com/users/surilireknod" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline flex items-center gap-1">
+              <i data-lucide="award" class="w-3 h-3"></i> CodeChef Profile
+            </a>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="space-y-2">
+          <h2 class="text-xs font-mono uppercase tracking-wider text-neon-cyanBright font-bold">
+            Professional Summary
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed bg-navy-900/60 p-4 rounded-xl border border-navy-800">
+            Motivated second-year Information Technology student at R. C. Patel Institute of Technology, Shirpur, Maharashtra. Possesses foundational knowledge of Java and C programming, with a strong interest in Data Structures and Algorithms (DSA), software development, and problem-solving. Eager to apply technical knowledge through practical projects and secure software engineering internship opportunities at premier technology firms like Microsoft, Google, Amazon, or Samsung.
+          </p>
+        </div>
+
+        <!-- Education -->
+        <div class="space-y-3">
+          <h2 class="text-xs font-mono uppercase tracking-wider text-electric-violetLight font-bold flex items-center gap-1.5">
+            <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+            <span>Education</span>
+          </h2>
+
+          <div class="space-y-3">
+            <div class="p-4 rounded-xl bg-navy-900/50 border border-navy-800 space-y-2">
+              <div class="flex flex-wrap items-start justify-between gap-1 text-xs sm:text-sm font-bold text-white">
+                <span>Bachelor of Technology (B.Tech) - Information Technology</span>
+                <span class="text-neon-cyanBright font-mono font-semibold">First-Year CGPA: 7.26 / 10</span>
+              </div>
+              <div class="flex flex-wrap items-center justify-between text-xs text-slate-400">
+                <span>R. C. Patel Institute of Technology, Shirpur</span>
+                <span class="font-mono">2023 — 2027 (Currently 2nd Year)</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-navy-900/50 border border-navy-800 space-y-2">
+              <div class="flex flex-wrap items-start justify-between gap-1 text-xs sm:text-sm font-bold text-white">
+                <span>Higher Secondary Certificate (HSC — 12th Standard)</span>
+                <span class="text-soft-pinkLight font-mono font-semibold">Final Percentage: 84.67%</span>
+              </div>
+              <div class="flex flex-wrap items-center justify-between text-xs text-slate-400">
+                <span>Maharashtra State Board (Science Stream)</span>
+                <span class="font-mono">Completed 2023</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-navy-900/50 border border-navy-800 space-y-2">
+              <div class="flex flex-wrap items-start justify-between gap-1 text-xs sm:text-sm font-bold text-white">
+                <span>Secondary School Certificate (SSC — 10th Standard)</span>
+                <span class="text-amber-300 font-mono font-semibold">Final Percentage: 90.20%</span>
+              </div>
+              <div class="flex flex-wrap items-center justify-between text-xs text-slate-400">
+                <span>Maharashtra State Board of Secondary Education</span>
+                <span class="font-mono">Completed 2021</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="space-y-3">
+          <h2 class="text-xs font-mono uppercase tracking-wider text-soft-pinkLight font-bold flex items-center gap-1.5">
+            <i data-lucide="code-2" class="w-4 h-4"></i>
+            <span>Technical Skills &amp; Competencies</span>
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="p-3.5 rounded-xl bg-navy-900/50 border border-navy-800 space-y-1">
+              <strong class="text-white block font-semibold">Programming Languages:</strong>
+              <span class="text-slate-300">Java (Core &amp; OOP), C Programming</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-navy-900/50 border border-navy-800 space-y-1">
+              <strong class="text-white block font-semibold">CS Fundamentals:</strong>
+              <span class="text-slate-300">Data Structures &amp; Algorithms (DSA), OOP, Problem Solving</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-navy-900/50 border border-navy-800 space-y-1">
+              <strong class="text-white block font-semibold">Development Tools:</strong>
+              <span class="text-slate-300">Visual Studio Code, Git, GitHub</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-navy-900/50 border border-navy-800 space-y-1">
+              <strong class="text-white block font-semibold">Areas of Interest:</strong>
+              <span class="text-slate-300">Software Engineering, Application Development, Relational Databases</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Projects -->
+        <div class="space-y-3">
+          <h2 class="text-xs font-mono uppercase tracking-wider text-amber-300 font-bold flex items-center gap-1.5">
+            <i data-lucide="folder-git-2" class="w-4 h-4"></i>
+            <span>Academic Projects</span>
+          </h2>
+
+          <div class="p-4 rounded-xl bg-navy-900/50 border border-navy-800 space-y-2 text-xs">
+            <div class="flex flex-wrap items-center justify-between gap-1">
+              <strong class="text-sm font-bold text-white">Online Student Leave Application System</strong>
+              <span class="text-neon-cyanBright font-mono font-medium">In Progress (Academic Capstone)</span>
+            </div>
+            <p class="text-slate-300 leading-relaxed">
+              Developing an academic project to digitize the student leave application process. Aims to simplify leave requests and approval workflows between students, faculty advisors, and institutional administration.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1 font-mono text-[11px] text-slate-300">
+              <span class="px-2 py-0.5 rounded bg-navy-950 border border-navy-800">Java</span>
+              <span class="px-2 py-0.5 rounded bg-navy-950 border border-navy-800">HTML5/CSS3</span>
+              <span class="px-2 py-0.5 rounded bg-navy-950 border border-navy-800">JavaScript</span>
+              <span class="px-2 py-0.5 rounded bg-navy-950 border border-navy-800">DBMS / SQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="space-y-3">
+          <h2 class="text-xs font-mono uppercase tracking-wider text-emerald-300 font-bold flex items-center gap-1.5">
+            <i data-lucide="award" class="w-4 h-4"></i>
+            <span>Certifications</span>
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="p-3.5 rounded-xl bg-navy-900/50 border border-navy-800 space-y-1">
+              <div class="font-bold text-white flex items-center justify-between">
+                <span>Java Programming Language Certification</span>
+                <span class="text-[10px] font-mono text-emerald-400">Verified</span>
+              </div>
+              <div class="text-slate-400 text-[11px] font-mono">Issued by: CodeChef (2024)</div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-navy-900/50 border border-navy-800 space-y-1">
+              <div class="font-bold text-white flex items-center justify-between">
+                <span>C Programming Language Certification</span>
+                <span class="text-[10px] font-mono text-emerald-400">Verified</span>
+              </div>
+              <div class="text-slate-400 text-[11px] font-mono">Issued by: CodeChef (2024)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hobbies -->
+        <div class="p-4 rounded-xl bg-navy-900/30 border border-navy-800/80 space-y-2 text-xs">
+          <div class="font-semibold text-white">Interests &amp; Hobbies:</div>
+          <div class="text-slate-300">
+            Coding and programming, software development, learning new technologies, and cooking.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== PROJECT DETAILS MODAL ==================== -->
+  <div id="project-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/80 backdrop-blur-md">
+    <div class="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto glass-card rounded-3xl border border-electric-violet/40 p-6 sm:p-8 shadow-2xl space-y-6">
+      <div class="flex items-start justify-between pb-4 border-b border-navy-800">
+        <div>
+          <span id="proj-modal-category" class="text-xs font-mono text-neon-cyanBright"></span>
+          <h3 id="proj-modal-title" class="text-xl sm:text-2xl font-bold text-white mt-1"></h3>
+        </div>
+        <button onclick="closeProjectModal()" class="p-2 rounded-xl text-slate-400 hover:text-white bg-navy-900 border border-navy-800">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400">Problem Statement &amp; Resolution:</h4>
+        <p id="proj-modal-problem" class="text-sm text-slate-300 leading-relaxed bg-navy-900/60 p-4 rounded-xl border border-navy-800"></p>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400">System Capabilities &amp; Architecture:</h4>
+        <div id="proj-modal-features" class="space-y-2"></div>
+      </div>
+
+      <div class="space-y-2">
+        <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400">Technologies:</h4>
+        <div id="proj-modal-tech" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <div class="pt-4 border-t border-navy-800 flex items-center justify-between">
+        <a id="proj-modal-github" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-electric-violet to-neon-cyan">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>View on GitHub</span>
+        </a>
+        <button onclick="closeProjectModal()" class="px-4 py-2.5 rounded-xl text-xs font-medium text-slate-300 hover:text-white bg-navy-900 border border-navy-800">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT CONTROLLERS ==================== -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Dynamic copyright year
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-nav').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Active Section Spy
+    const sections = ['home', 'about', 'skills', 'projects', 'certifications', 'career-goals', 'contact'];
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY + 220;
+      for (const sectionId of sections) {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            document.querySelectorAll('.nav-item').forEach(nav => {
+              if (nav.getAttribute('href') === `#${sectionId}`) {
+                nav.className = 'nav-item px-3.5 py-1.5 text-xs font-semibold rounded-full bg-gradient-to-r from-electric-violet/30 to-neon-cyan/20 text-white border border-electric-violet/50 shadow-sm transition-all';
+              } else {
+                nav.className = 'nav-item px-3.5 py-1.5 text-xs font-medium rounded-full text-slate-300 hover:text-white hover:bg-navy-800/60 transition-all';
+              }
+            });
+            break;
+          }
+        }
+      }
+    });
+
+    // ==================== UNIFIED FUTURISTIC GALAXY CONTROLLER ====================
+    const canvas = document.getElementById('bg-galaxy-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let animId;
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      const isMobile = width < 768;
+      const starCount = isMobile ? 35 : 80;
+      const nodeCount = isMobile ? 22 : 45;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Twinkling Starfield
+      const stars = [];
+      for (let i = 0; i < starCount; i++) {
+        stars.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          size: Math.random() * 1.5 + 0.6,
+          alpha: Math.random() * 0.7 + 0.2,
+          alphaSpeed: (Math.random() * 0.015 + 0.005) * (Math.random() < 0.5 ? 1 : -1),
+          vy: (Math.random() * 0.12 + 0.03) * -1,
+        });
+      }
+
+      // Constellation Nodes
+      const colors = ['#8B5CF6', '#06B6D4', '#EC4899', '#A78BFA', '#22D3EE'];
+      const nodes = [];
+      for (let i = 0; i < nodeCount; i++) {
+        const vx = (Math.random() - 0.5) * 0.45;
+        const vy = (Math.random() - 0.5) * 0.45;
+        nodes.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx,
+          vy,
+          radius: Math.random() * 2 + 1.2,
+          color: colors[Math.floor(Math.random() * colors.length)],
+        });
+      }
+
+      // Mouse tracking for cursor spotlight & gentle repulsion
+      const mouse = { x: -2000, y: -2000, targetX: -2000, targetY: -2000 };
+      window.addEventListener('mousemove', (e) => {
+        mouse.targetX = e.clientX;
+        mouse.targetY = e.clientY;
+      }, { passive: true });
+
+      window.addEventListener('mouseleave', () => {
+        mouse.targetX = -2000;
+        mouse.targetY = -2000;
+      });
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      // Battery Saver: Pause when tab is hidden
+      let isTabVisible = true;
+      document.addEventListener('visibilitychange', () => {
+        isTabVisible = !document.hidden;
+        if (isTabVisible && !prefersReducedMotion) {
+          animId = requestAnimationFrame(renderCanvas);
+        }
+      });
+
+      function renderCanvas() {
+        if (!isTabVisible) return;
+
+        ctx.clearRect(0, 0, width, height);
+
+        // Desktop Cursor Spotlight Glow (Smooth lerping)
+        mouse.x += (mouse.targetX - mouse.x) * 0.08;
+        mouse.y += (mouse.targetY - mouse.y) * 0.08;
+
+        if (mouse.x > -1000 && mouse.y > -1000 && !isMobile) {
+          const glowGrad = ctx.createRadialGradient(mouse.x, mouse.y, 10, mouse.x, mouse.y, 350);
+          glowGrad.addColorStop(0, 'rgba(139, 92, 246, 0.12)');
+          glowGrad.addColorStop(0.4, 'rgba(6, 182, 212, 0.06)');
+          glowGrad.addColorStop(1, 'rgba(3, 5, 20, 0)');
+          ctx.fillStyle = glowGrad;
+          ctx.beginPath();
+          ctx.arc(mouse.x, mouse.y, 350, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        // Draw Stars
+        for (let i = 0; i < stars.length; i++) {
+          const s = stars[i];
+          if (!prefersReducedMotion) {
+            s.alpha += s.alphaSpeed;
+            if (s.alpha > 0.95 || s.alpha < 0.2) s.alphaSpeed *= -1;
+            s.y += s.vy;
+            if (s.y < 0) {
+              s.y = height;
+              s.x = Math.random() * width;
+            }
+          }
+
+          ctx.fillStyle = `rgba(241, 245, 249, ${s.alpha})`;
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        // Draw Constellation Nodes & Proximity Lines
+        for (let i = 0; i < nodes.length; i++) {
+          const n = nodes[i];
+
+          if (!prefersReducedMotion) {
+            n.x += n.vx;
+            n.y += n.vy;
+
+            if (n.x < 0 || n.x > width) n.vx *= -1;
+            if (n.y < 0 || n.y > height) n.vy *= -1;
+
+            // Interactive mouse gentle repulsion
+            const dxMouse = mouse.x - n.x;
+            const dyMouse = mouse.y - n.y;
+            const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+            if (distMouse < 140) {
+              const force = (140 - distMouse) / 140;
+              n.x -= (dxMouse / distMouse) * force * 1.5;
+              n.y -= (dyMouse / distMouse) * force * 1.5;
+            }
+          }
+
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+          ctx.fillStyle = n.color;
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = n.color;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+
+          for (let j = i + 1; j < nodes.length; j++) {
+            const n2 = nodes[j];
+            const dx = n.x - n2.x;
+            const dy = n.y - n2.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 90) {
+              ctx.beginPath();
+              ctx.moveTo(n.x, n.y);
+              ctx.lineTo(n2.x, n2.y);
+              ctx.strokeStyle = `rgba(139, 92, 246, ${0.22 * (1 - dist / 90)})`;
+              ctx.lineWidth = 0.7;
+              ctx.stroke();
+            }
+          }
+        }
+
+        if (!prefersReducedMotion) {
+          animId = requestAnimationFrame(renderCanvas);
+        }
+      }
+
+      renderCanvas();
+    }
+
+    // Skills Filter Controller
+    function filterSkills(cat) {
+      document.querySelectorAll('.skill-filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-filter') === cat) {
+          btn.className = 'skill-filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all bg-gradient-to-r from-electric-violet to-neon-cyan text-white shadow-lg border border-neon-cyan/40';
+        } else {
+          btn.className = 'skill-filter-btn px-4 py-2 rounded-full text-xs font-medium transition-all bg-navy-900/90 text-slate-300 hover:text-white border border-navy-800 hover:border-navy-700';
+        }
+      });
+
+      document.querySelectorAll('.skill-category-card').forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Resume Modal Handler
+    function openResumeModal() {
+      document.getElementById('resume-modal').classList.remove('hidden');
+    }
+    function closeResumeModal() {
+      document.getElementById('resume-modal').classList.add('hidden');
+    }
+
+    // Project Details Data & Modal Handler
+    const projectData = {
+      'leave-system': {
+        title: 'Online Student Leave Application System',
+        category: 'Academic Software Project • In Progress',
+        problem: 'Traditional paper-based leave slips in colleges cause physical bottlenecks, delayed teacher signatures, misplaced records, and zero transparency. This project digitizes the entire lifecycle—allowing students to submit digital leave requests with categorized justifications and giving faculty a centralized dashboard for real-time approvals.',
+        features: [
+          'Student Portal: Intuitive form submission with medical, academic, or personal leave categorization and date span selection.',
+          'Faculty & Admin Dashboard: Real-time request feed with timestamped 1-click Approve, Reject, or Request-Clarification actions.',
+          'Application Lifecycle Tracking: Instant visual status indicators (Pending Review, Approved, Rejected) for total transparency.',
+          'Institutional Record Archival: Clean schema keeping auditable historical leave logs, reducing paperwork and administrative burden.'
+        ],
+        tech: ['Java', 'HTML5', 'CSS3', 'JavaScript', 'DBMS / SQL Concepts', 'Object-Oriented Design'],
+        github: 'https://github.com/SuriliReknod18/Online-Student-Leave-Application-System'
+      },
+      'dsa-lab': {
+        title: 'Java Data Structures & Algorithms Practice Lab',
+        category: 'Algorithmic Problem Solving • Completed',
+        problem: 'Mastering coding interviews and Tier-1 engineering problem-solving requires structured hands-on implementation from scratch rather than relying on high-level abstractions.',
+        features: [
+          'From-scratch implementations of Linked Lists, Stacks, Queues, Binary Trees, and Hash Maps in Java.',
+          'Algorithmic paradigms covered: Two-Pointer technique, Sliding Window, Binary Search, and Recursion.',
+          'Documented Big-O Time & Space complexity metrics and verification unit test cases.'
+        ],
+        tech: ['Java', 'Data Structures', 'Algorithms', 'Big-O Analysis', 'VS Code', 'Git'],
+        github: 'https://github.com/SuriliReknod18/Java-DSA-Solutions'
+      },
+      'grade-analyzer': {
+        title: 'Student Academic Record & Grade Analyzer',
+        category: 'Java & Database Application • Active Concept',
+        problem: 'Simplifies manual grade calculations across multiple semesters while enforcing data validation rules and automated performance classification.',
+        features: [
+          'Modular class architecture encapsulating Student, Course, Semester, and Evaluation models.',
+          'Automated SGPA and cumulative CGPA calculation based on university credit grading schemes.',
+          'Persistence layer supporting record export, search by PRN/Roll number, and score statistics.'
+        ],
+        tech: ['Java', 'OOP Principles', 'File I/O / SQL', 'VS Code'],
+        github: 'https://github.com/SuriliReknod18'
+      }
+    };
+
+    function openProjectModal(key) {
+      const proj = projectData[key];
+      if (!proj) return;
+
+      document.getElementById('proj-modal-title').textContent = proj.title;
+      document.getElementById('proj-modal-category').textContent = proj.category;
+      document.getElementById('proj-modal-problem').textContent = proj.problem;
+
+      const featContainer = document.getElementById('proj-modal-features');
+      featContainer.innerHTML = '';
+      proj.features.forEach(f => {
+        const div = document.createElement('div');
+        div.className = 'flex items-start gap-2.5 text-xs sm:text-sm text-slate-300 p-2.5 rounded-lg bg-navy-900/40 border border-navy-800/60';
+        div.innerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4 text-neon-cyanLight shrink-0 mt-0.5"></i><span>${f}</span>`;
+        featContainer.appendChild(div);
+      });
+
+      const techContainer = document.getElementById('proj-modal-tech');
+      techContainer.innerHTML = '';
+      proj.tech.forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'px-3 py-1 rounded-lg text-xs font-mono bg-navy-900 border border-navy-800 text-neon-cyanBright';
+        span.textContent = t;
+        techContainer.appendChild(span);
+      });
+
+      document.getElementById('proj-modal-github').setAttribute('href', proj.github);
+      document.getElementById('project-modal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeProjectModal() {
+      document.getElementById('project-modal').classList.add('hidden');
+    }
+
+    // Clipboard Copy Utility
+    function copyToClipboard(text, btn) {
+      navigator.clipboard.writeText(text);
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>';
+      lucide.createIcons();
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        lucide.createIcons();
+      }, 2500);
+    }
+
+    // Contact Form Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('form-name').value.trim();
+      const email = document.getElementById('form-email').value.trim();
+      const subject = document.getElementById('form-subject').value.trim();
+      const message = document.getElementById('form-message').value.trim();
+
+      let valid = true;
+
+      // Name validation
+      if (!name || name.length < 2) {
+        document.getElementById('err-name').classList.remove('hidden');
+        document.getElementById('err-name').classList.add('flex');
+        valid = false;
+      } else {
+        document.getElementById('err-name').classList.add('hidden');
+        document.getElementById('err-name').classList.remove('flex');
+      }
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
+        document.getElementById('err-email').classList.remove('hidden');
+        document.getElementById('err-email').classList.add('flex');
+        valid = false;
+      } else {
+        document.getElementById('err-email').classList.add('hidden');
+        document.getElementById('err-email').classList.remove('flex');
+      }
+
+      // Subject validation
+      if (!subject) {
+        document.getElementById('err-subject').classList.remove('hidden');
+        document.getElementById('err-subject').classList.add('flex');
+        valid = false;
+      } else {
+        document.getElementById('err-subject').classList.add('hidden');
+        document.getElementById('err-subject').classList.remove('flex');
+      }
+
+      // Message validation
+      if (!message || message.length < 10) {
+        document.getElementById('err-message').classList.remove('hidden');
+        document.getElementById('err-message').classList.add('flex');
+        valid = false;
+      } else {
+        document.getElementById('err-message').classList.add('hidden');
+        document.getElementById('err-message').classList.remove('flex');
+      }
+
+      if (valid) {
+        const mailtoUrl = `mailto:surelireknod@gmail.com?subject=${encodeURIComponent(
+          `[Portfolio Inquiry] ${subject}`
+        )}&body=${encodeURIComponent(
+          `Hi Surili,\n\nMy name is ${name} (${email}).\n\n${message}\n\nBest regards,\n${name}`
+        )}`;
+
+        document.getElementById('form-success').classList.remove('hidden');
+        document.getElementById('form-success').classList.add('flex');
+        window.location.href = mailtoUrl;
+
+        setTimeout(() => {
+          document.getElementById('contact-form').reset();
+        }, 1500);
+      }
+    }
+  </script>
+</body>
+</html>
